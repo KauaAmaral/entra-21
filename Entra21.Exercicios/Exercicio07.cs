@@ -41,7 +41,7 @@ namespace Entra21.ExerciciosWhile
 
 
             }
-            Console.WriteLine(valorTotalDesconto);
+            Console.WriteLine("Valor a pagar: R$" + valorTotalDesconto);
 
         }
     }
