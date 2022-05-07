@@ -11,6 +11,12 @@ namespace Entra21.ExerciciosWhile
         public void Executar()
         {
             // Solicite um número e apresentar a tabuada do mesmo até 1000.
+
+            Console.Write("Digite um número: ");
+            int numero = Convert.ToDouble(Console.ReadLine());
+
+
+
         }
     }
 }
