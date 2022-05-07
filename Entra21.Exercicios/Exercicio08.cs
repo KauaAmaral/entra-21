@@ -13,10 +13,16 @@ namespace Entra21.ExerciciosWhile
             // Solicite um número e apresentar a tabuada do mesmo até 1000.
 
             Console.Write("Digite um número: ");
-            int numero = Convert.ToDouble(Console.ReadLine());
+            int numero = Convert.ToInt32(Console.ReadLine());
+            int indice = 0, resultado = 0;
 
+            while (indice < 1000)
+            {
+                indice = indice + 1;
+                resultado = numero * indice;
 
-
+                Console.WriteLine(indice + " x " + numero + " = " + resultado);
+            }
         }
     }
 }

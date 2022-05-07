@@ -3,11 +3,12 @@
 Console.WriteLine(@"--------Menu-------
 1- Exercício 01
 2- Exercício 02
-3- Exercício 03
+3- Exercício 03                 S
 4- Exercício 04
 5- Exercício 05
 6- Exercício 06
 7- Exercício 07
+8- Exercício 08
 ");
 
 Console.Write("Digite a opção desejada: ");
@@ -48,4 +49,9 @@ else if (opcaoDesejada == 7)
 {
     Exercicio07 exercicio07 = new Exercicio07();
     exercicio07.Executar();
+}
+else if (opcaoDesejada == 8)
+{
+    Exercicio08 exercicio08 = new Exercicio08();
+    exercicio08.Executar();
 }
