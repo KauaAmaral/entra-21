@@ -13,15 +13,15 @@ namespace Entra21.ExerciciosWhile
             // Solicite o nome, valor, quantidade enquanto a quantidade de produtos for menor que 5.
             // Ao final deve-se aplicar um desconto de R$ 150,00.
 
-            int quantidade = 0;
-            double valor = 0, somaTodosProdutos = 0, valorTotalDesconto = 0, somaValor = 0, desconto = 0;
+            int quantidadeItens = 0, quantidadeProdutos = 0;
+            double valor = 0, somaTodosProdutos = 0, valorTotalDesconto = 0, somaValor = 0, desconto = 150;
 
-            while (quantidade < 5)
+            while (quantidadeProdutos < 5)
             {
                 Console.WriteLine("Quantidade de produtos:");
-                quantidade = Convert.ToInt32(Console.ReadLine());
+                quantidadeItens = Convert.ToInt32(Console.ReadLine());
 
-                while (quantidade < 5)
+                while (quantidadeProdutos < 5)
                 {
                     Console.WriteLine("Nome do Produto:");
                     string nomeProduto = Console.ReadLine().Trim().ToLower();
@@ -30,17 +30,19 @@ namespace Entra21.ExerciciosWhile
                     valor = Convert.ToDouble(Console.ReadLine());
 
                     Console.WriteLine("Quantidade de produtos:");
-                    quantidade = Convert.ToInt32(Console.ReadLine());
+                    quantidadeItens = Convert.ToInt32(Console.ReadLine());
 
-                    somaValor = valor * quantidade;
+                    somaValor = valor * quantidadeItens;
                     somaTodosProdutos = somaTodosProdutos + somaValor;
-                    desconto = somaTodosProdutos - 150;
-                    valorTotalDesconto = somaTodosProdutos - desconto;
+                    quantidadeProdutos = quantidadeProdutos + 1;
+
                 }
 
 
 
             }
+            valorTotalDesconto = somaTodosProdutos - desconto;
+
             Console.WriteLine("Valor a pagar: R$" + valorTotalDesconto);
 
         }
