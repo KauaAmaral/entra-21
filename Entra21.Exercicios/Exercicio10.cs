@@ -20,33 +20,34 @@ namespace Entra21.ExerciciosWhile
             ordemDecrescente = numero;
             ordemCrescente = numero;
 
+            Console.WriteLine(@"
+Os 50 números antecessores pares do número: " + numero +
+"");
+
             while (indice < 50)
             {
-                while (indice < 50)
+                ordemDecrescente = ordemDecrescente - 1;
+
+                if (ordemDecrescente % 2 == 0)
                 {
-                    ordemDecrescente = ordemDecrescente - 1;
-
-                    if (ordemDecrescente % 2 == 0)
-                    {
-                        Console.WriteLine(ordemDecrescente);
-                    }
-
-                    while (indice2 < 50)
-                    {
-                        indice2 = indice2 + 1;
-
-                        ordemCrescente = ordemCrescente + 1;
-
-                        if (ordemCrescente % 2 != 0)
-                        {
-                            Console.WriteLine(ordemCrescente);
-                        }
-
-                        indice = indice + 1;
-                    }
-
-                    indice = 50;
+                    Console.WriteLine(ordemDecrescente);
                 }
+                indice = indice + 1;
+            }
+
+            Console.WriteLine(@"
+Os 50 números sucessores ímpares do número: " + numero +
+"");
+
+            while (indice2 < 50)
+            {
+                ordemCrescente = ordemCrescente + 1;
+
+                if (ordemCrescente % 2 != 0)
+                {
+                    Console.WriteLine(ordemCrescente);
+                }
+                indice2 = indice2 + 1;
             }
         }
     }
