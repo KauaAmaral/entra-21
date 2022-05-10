@@ -79,7 +79,7 @@ namespace Entra21.ExerciciosWhile
 
                 if (numeroPedido != 16)
                 {
-                quantidadePedidos = quantidadePedidos + 1;
+                    quantidadePedidos = quantidadePedidos + 1;
                 }
 
                 // quantidade de bolos, doces, sanduíches, pizzas
@@ -100,10 +100,6 @@ namespace Entra21.ExerciciosWhile
                 {
                     quantidadepizza = quantidadepizza + 1;
                 }
-
-                // Média dos itens
-
-                
 
                 // valor total
 
@@ -169,12 +165,15 @@ namespace Entra21.ExerciciosWhile
                 }
 
             }
-            Console.WriteLine("Quantidade de bolos pedido: " + quantidadeBolo +
-                "\nQuantidade de doces pedido: " + quantidadeDoce +
-                "\nQuantidade de sanduíches pedido: " + quantidadeSanduiche +
-                "\nQuantidade de pizzas pedida: " + quantidadepizza +
+            double mediaValor = valorTotal / quantidadePedidos;
+
+            Console.WriteLine("Quantidade de bolos pedido: " + quantidadeBolo + 
+                "\nQuantidade de doces pedido: " + quantidadeDoce + 
+                "\nQuantidade de sanduíches pedido: " + quantidadeSanduiche + 
+                "\nQuantidade de pizzas pedida: " + quantidadepizza + 
                 "\nQuantidade total de pedidos: " + quantidadePedidos +
-                "\nValor total da comanda: R$" + valorTotal);
+                "\nValor total da comanda: R$" + valorTotal +
+                "\nMédia do valor total: R$" + mediaValor);
         }
 
     }
