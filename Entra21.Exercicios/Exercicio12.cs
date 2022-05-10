@@ -48,12 +48,11 @@ namespace Entra21.ExerciciosWhile
             int quantidadeSanduiche = 0;
             int quantidadepizza = 0;
             int quantidadePedidos = 0;
+            double valorTotal = 0;
 
             while (numeroPedido != 16)
             {
-                while (numeroPedido != 16)
-                {
-                    Console.WriteLine(@"Menu
+                Console.WriteLine(@"Menu
             1  Bolos       | Bolo Brigadeiro                             | R$ 29,50
             2  Bolos       | Bolo Floresta Negra                         | R$ 2,00
             3  Bolos       | Bolo Leite com Nutella                      | R$ 29,23
@@ -72,46 +71,112 @@ namespace Entra21.ExerciciosWhile
 
             16 Sair");
 
-                    // Quantidade de produtos consumidos
-
-                    numeroPedido = Convert.ToInt32(Console.ReadLine());
-
-                    quantidadePedidos = quantidadePedidos + 1;
-
-                    // quantidade de bolos, doces, sanduíches, pizzas
-
-                    if ((numeroPedido == 1) || (numeroPedido == 2) || (numeroPedido == 3) || (numeroPedido == 4) || (numeroPedido == 5))
-                    {
-                        quantidadeBolo = quantidadeBolo + 1;
-                    }
-                    else if ((numeroPedido == 6) || (numeroPedido == 7))
-                    {
-                        quantidadeDoce = quantidadeDoce + 1;
-                    }
-                    else if ((numeroPedido == 8) || (numeroPedido == 9) || (numeroPedido == 10) || (numeroPedido == 11))
-                    {
-                        quantidadeSanduiche = quantidadeSanduiche + 1;
-                    }
-                    else if ((numeroPedido == 12) || (numeroPedido == 13) || (numeroPedido == 14) || (numeroPedido == 15))
-                    {
-                        quantidadepizza = quantidadepizza + 1;
-                    }
-
-                    // media dos produtos
+                numeroPedido = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
 
 
+                // Quantidade de produtos consumidos
 
-
-
-
-
+                if (numeroPedido != 16)
+                {
+                quantidadePedidos = quantidadePedidos + 1;
                 }
+
+                // quantidade de bolos, doces, sanduíches, pizzas
+
+                if ((numeroPedido == 1) || (numeroPedido == 2) || (numeroPedido == 3) || (numeroPedido == 4) || (numeroPedido == 5))
+                {
+                    quantidadeBolo = quantidadeBolo + 1;
+                }
+                else if ((numeroPedido == 6) || (numeroPedido == 7))
+                {
+                    quantidadeDoce = quantidadeDoce + 1;
+                }
+                else if ((numeroPedido == 8) || (numeroPedido == 9) || (numeroPedido == 10) || (numeroPedido == 11))
+                {
+                    quantidadeSanduiche = quantidadeSanduiche + 1;
+                }
+                else if ((numeroPedido == 12) || (numeroPedido == 13) || (numeroPedido == 14) || (numeroPedido == 15))
+                {
+                    quantidadepizza = quantidadepizza + 1;
+                }
+
+                // Média dos itens
+
+                
+
+                // valor total
+
+                if (numeroPedido == 1)
+                {
+                    valorTotal = valorTotal + 29.50;
+                }
+                else if (numeroPedido == 2)
+                {
+                    valorTotal = valorTotal + 2;
+                }
+                else if (numeroPedido == 3)
+                {
+                    valorTotal = valorTotal + 29.23;
+                }
+                else if (numeroPedido == 4)
+                {
+                    valorTotal = valorTotal + 7.10;
+                }
+                else if (numeroPedido == 5)
+                {
+                    valorTotal = valorTotal + 19.33;
+                }
+                else if (numeroPedido == 6)
+                {
+                    valorTotal = valorTotal + 17.71;
+                }
+                else if (numeroPedido == 7)
+                {
+                    valorTotal = valorTotal + 4.82;
+                }
+                else if (numeroPedido == 8)
+                {
+                    valorTotal = valorTotal + 21.16;
+                }
+                else if (numeroPedido == 9)
+                {
+                    valorTotal = valorTotal + 12.70;
+                }
+                else if (numeroPedido == 10)
+                {
+                    valorTotal = valorTotal + 19.70;
+                }
+                else if (numeroPedido == 11)
+                {
+                    valorTotal = valorTotal + 28.22;
+                }
+                else if (numeroPedido == 12)
+                {
+                    valorTotal = valorTotal + 8.98;
+                }
+                else if (numeroPedido == 13)
+                {
+                    valorTotal = valorTotal + 0.42;
+                }
+                else if (numeroPedido == 14)
+                {
+                    valorTotal = valorTotal + 18.36;
+                }
+                else if (numeroPedido == 15)
+                {
+                    valorTotal = valorTotal + 27.50;
+                }
+
             }
-
-
-
-
-
+            Console.WriteLine("Quantidade de bolos pedido: " + quantidadeBolo +
+                "\nQuantidade de doces pedido: " + quantidadeDoce +
+                "\nQuantidade de sanduíches pedido: " + quantidadeSanduiche +
+                "\nQuantidade de pizzas pedida: " + quantidadepizza +
+                "\nQuantidade total de pedidos: " + quantidadePedidos +
+                "\nValor total da comanda: R$" + valorTotal);
         }
+
     }
 }
+
