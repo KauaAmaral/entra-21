@@ -21,20 +21,62 @@ namespace Entra21.ExerciciosForTry
 
             Console.WriteLine("Quantos carros voccê deseja cadastrar?");
             var quantidadeCarrosCadastrados = Convert.ToInt32(Console.ReadLine());
-            int somaAno = 0, mediaAno = 0, somaG = 0, somaA = 0;
-            double somaValor = 0, mediaValor = 0;
+            Console.Clear();
+
+            int somaAno = 0, mediaAno = 0, somaG = 0, somaA = 0, anoCarro = 0;
+            double somaValor = 0, mediaValor = 0, valorCarro = 0;
 
             for (var i = 0; i < quantidadeCarrosCadastrados; i++)
             {
                 Console.WriteLine("Modelo do carro:");
                 var modelo = Console.ReadLine().ToLower().Trim();
 
-                Console.WriteLine("Valor do carro:");
-                var valorCarro = Convert.ToDouble(Console.ReadLine());
+                while (valorCarro <= 0)
+                {
+                    try
+                    {
+                        Console.WriteLine("Valor do carro:");
+                        valorCarro = Convert.ToDouble(Console.ReadLine());
+
+                        if (valorCarro <= 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine(@"Valor não pode ser menor ou igual a 0
+                            ");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(@"Valor do carro não é válido
+                        ");
+                    }
+                }
+
                 somaValor = somaValor + valorCarro;
 
-                Console.WriteLine("Ano do carro:");
-                var anoCarro = Convert.ToInt32(Console.ReadLine());
+                while (anoCarro <= 0)
+                {
+                    try
+                    {
+                        Console.WriteLine("Ano do carro:");
+                        anoCarro = Convert.ToInt32(Console.ReadLine());
+
+                        if (anoCarro <= 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine(@"Ano do carro não pode ser menor ou igual a 0
+                            ");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(@"Ano do carro não é valido
+                        ");
+                    }
+                }
+
                 somaAno = somaAno + anoCarro;
 
                 if (modelo.StartsWith("g"))
@@ -46,11 +88,19 @@ namespace Entra21.ExerciciosForTry
                     somaA = somaA + 1;
                 }
 
+                anoCarro = 0;
+                valorCarro = 0;
+                Console.Clear();
 
             }
 
+            mediaValor = somaValor / quantidadeCarrosCadastrados;
+            mediaAno = somaAno / quantidadeCarrosCadastrados;
 
-
+            Console.WriteLine("Média do ano dos carros: " + mediaAno +
+                "\nMédia do valor dos carros: " + mediaValor +
+                "\nQuantidade de carros que começa com G: " + somaG +
+                "\nQuantidade de carros que começa com A: " + somaA);
         }
     }
 }
