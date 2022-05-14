@@ -5,8 +5,30 @@ Console.WriteLine(@"--------Menu-------
 2- Exemplo 02
 3- Exemplo 03");
 
-Console.Write("Digite a opção desejada: ");
-int opcaoDesejada = Convert.ToInt32(Console.ReadLine());
+var opcaoDesejada = 0;
+
+while (opcaoDesejada <= 0)
+{
+    try
+    {
+        Console.WriteLine("Digite a opção desejada: ");
+        opcaoDesejada = Convert.ToInt32(Console.ReadLine());
+
+        if (opcaoDesejada <= 0)
+        {
+            Console.WriteLine(@"
+Apenas um número do menu
+");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(@"
+Apenas um numero do menu
+");
+    }
+}
+Console.Clear(); ;
 
 if (opcaoDesejada == 1)
 {
