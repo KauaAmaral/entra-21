@@ -2,7 +2,8 @@
 
 Console.WriteLine(@"--------Menu-------
 1- Exercício 01
-2- Exercício 05
+2- Exercício 02
+3- Exercício 03
 ");
 
 Console.Write("Digite a opção desejada: ");
@@ -18,4 +19,9 @@ else if (opcaoDesejada == 2)
 {
     Exercicio02 exercicio02 = new Exercicio02();
     exercicio02.Executar();
+}
+else if (opcaoDesejada == 3)
+{
+    Exercicio03 exercicio03 = new Exercicio03();
+    exercicio03.Executar();
 }
