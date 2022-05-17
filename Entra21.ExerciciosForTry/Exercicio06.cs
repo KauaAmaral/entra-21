@@ -40,7 +40,7 @@ namespace Entra21.ExerciciosForTry
 
             int jogadoresF = 0, jogadoresM = 0, quantidadeMaisAmarelos = -2000, quantidadeMenosAmarelos = 2000, quantidadeMaislVermelhos = -2000, quantidadeMenosVermelhos = 2000;
 
-            double maiorPeso = -2000, menorPeso = 2000, maiorAltura = -2000, menorAltura = 2000;
+            double maiorPeso = -2000, menorPeso = 2000, maiorAltura = -2000, menorAltura = 2000, peso = 0;
 
             for (var i = 0; i < 3; i++)
             {
@@ -49,11 +49,41 @@ namespace Entra21.ExerciciosForTry
                 Console.Write("Nome: ");
                 var nome = Console.ReadLine().Trim().ToLower();
 
-                Console.Write("Idade: ");
-                var idade = Convert.ToInt32(Console.ReadLine());
+                for (var idade = 0; idade <= 0;)
+                {
+                    try
+                    {
+                        Console.Write("Idade: ");
+                        idade = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write("Peso: ");
-                var peso = Convert.ToDouble(Console.ReadLine());
+                        if (idade < 6)
+                        {
+                            Console.WriteLine("Apenas acima de 6 anos.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Digite uma idade váida.");
+                    }
+                }
+
+                while (peso <= 0)
+                {
+                    try
+                    {
+                        Console.Write("Peso: ");
+                        peso = Convert.ToDouble(Console.ReadLine());
+
+                        if (peso < 15)
+                        {
+                            Console.WriteLine("Apenas acima de 15kg.");
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Digite um peso válido.");
+                    }
+                }
 
                 Console.Write("Sexo: ");
                 var sexo = Console.ReadLine().ToLower().Trim();
@@ -70,18 +100,42 @@ namespace Entra21.ExerciciosForTry
                 Console.Write("Quantidade de cartões vermelhos reebidos: ");
                 var quantidadeVermelhosRecebidos = Convert.ToInt32(Console.ReadLine());
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 // Menor e Maior nome
 
                 if (nome.Length > jogadorMaiorNome.Length)
                 {
                     jogadorMaiorNome = nome;
                 }
-                
+
                 if (nome.Length < jogadorMaiorNome.Length)
                 {
                     jogadorMenorNome = nome;
                 }
-                
+
                 if (jogadorMenorNome.Length < jogadorMenorNome.Length)
                 {
                     jogadorMenorNome = nome;
