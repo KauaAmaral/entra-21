@@ -72,32 +72,30 @@ namespace Entra21.ExerciciosForTry
 
                 // Menor e Maior nome
 
-                if (nome.Length >= jogadorMaiorNome.Length)
+                if (nome.Length > jogadorMaiorNome.Length)
                 {
                     jogadorMaiorNome = nome;
                 }
-                else if (nome.Length <= jogadorMaiorNome.Length)
+                
+                if (nome.Length < jogadorMaiorNome.Length)
                 {
                     jogadorMenorNome = nome;
                 }
-                else if (jogadorMenorNome.Length <= jogadorMenorNome.Length)
+                
+                if (jogadorMenorNome.Length < jogadorMenorNome.Length)
                 {
                     jogadorMenorNome = nome;
                 }
 
                 // Menor e maior peso 
 
-                if (peso >= maiorPeso)
+                if (peso > maiorPeso)
                 {
                     maiorPeso = peso;
                     jogadorMaiorPeso = nome;
                 }
-                else if (peso < maiorPeso)
-                {
-                    menorPeso = peso;
-                    jogadorMenorPeso = nome;
-                }
-                else if (menorPeso <= menorPeso)
+
+                if (peso < menorPeso)
                 {
                     menorPeso = peso;
                     jogadorMenorPeso = nome;
@@ -105,17 +103,13 @@ namespace Entra21.ExerciciosForTry
 
                 // maior e menor altura
 
-                if (altura >= maiorAltura)
+                if (altura > maiorAltura)
                 {
                     maiorAltura = altura;
                     jogadorMaiorAltura = nome;
                 }
-                else if (altura < maiorAltura)
-                {
-                    menorAltura = altura;
-                    jogadorMenorAltura = nome;
-                }
-                else if (menorAltura <= menorAltura)
+
+                if (altura < menorAltura)
                 {
                     menorAltura = altura;
                     jogadorMenorAltura = nome;
@@ -134,33 +128,26 @@ namespace Entra21.ExerciciosForTry
 
                 // Quantidade maior e menor amarelos e vermelhos
 
-                if (quantidadeAmarelosRecebidos >= quantidadeMaisAmarelos)
+                // Amarelos
+                if (quantidadeAmarelosRecebidos > quantidadeMaisAmarelos)
                 {
                     quantidadeMaisAmarelos = quantidadeAmarelosRecebidos;
                     jogadorMaisAmarelos = nome;
                 }
-                else if (quantidadeAmarelosRecebidos < quantidadeMaisAmarelos)
+
+                if (quantidadeAmarelosRecebidos < quantidadeMenosAmarelos)
                 {
                     quantidadeMenosAmarelos = quantidadeAmarelosRecebidos;
                     jogadorMenosAmarelos = nome;
                 }
-                else if (quantidadeMenosAmarelos < quantidadeMenosAmarelos)
-                {
-                    quantidadeMenosAmarelos = quantidadeAmarelosRecebidos;
-                    jogadorMenosAmarelos = nome;
-                }
-               
-                if (quantidadeVermelhosRecebidos >= quantidadeMaislVermelhos)
+                // Vermelhos
+                if (quantidadeVermelhosRecebidos > quantidadeMaislVermelhos)
                 {
                     quantidadeMaislVermelhos = quantidadeVermelhosRecebidos;
                     jogadorMaisVermehlos = nome;
                 }
-                else if (quantidadeVermelhosRecebidos < quantidadeMaislVermelhos)
-                {
-                    quantidadeMenosVermelhos = quantidadeVermelhosRecebidos;
-                    jogadorMenosVermehlos = nome;
-                }
-                else if (quantidadeMenosVermelhos < quantidadeMenosVermelhos)
+
+                if (quantidadeVermelhosRecebidos < quantidadeMenosVermelhos)
                 {
                     quantidadeMenosVermelhos = quantidadeVermelhosRecebidos;
                     jogadorMenosVermehlos = nome;
@@ -170,7 +157,7 @@ namespace Entra21.ExerciciosForTry
 
             Console.WriteLine("Jogador com o maior nome: " + jogadorMaiorNome +
                 "" +
-                "\nJogador com o menor nome" + jogadorMenorNome +
+                "\nJogador com o menor nome: " + jogadorMenorNome +
                 "" +
                 "\nJogador com maior peso: " + jogadorMaiorPeso +
                 "" +

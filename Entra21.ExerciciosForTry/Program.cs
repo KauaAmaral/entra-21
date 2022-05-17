@@ -6,6 +6,7 @@ Console.WriteLine(@"--------Menu-------
 3- Exercício 03
 4- Exercício 04
 5- Exercício 05
+6- Exercício 06
 ");
 
 var opcaoDesejada = 0;
