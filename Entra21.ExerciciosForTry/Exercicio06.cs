@@ -40,7 +40,7 @@ namespace Entra21.ExerciciosForTry
 
             int jogadoresF = 0, jogadoresM = 0, quantidadeMaisAmarelos = -2000, quantidadeMenosAmarelos = 2000, quantidadeMaislVermelhos = -2000, quantidadeMenosVermelhos = 2000;
 
-            double maiorPeso = -2000, menorPeso = 2000, maiorAltura = -2000, menorAltura = 2000, peso = 0;
+            double maiorPeso = -2000, menorPeso = 2000, maiorAltura = -2000, menorAltura = 2000;
 
             for (var i = 0; i < 3; i++)
             {
@@ -49,7 +49,8 @@ namespace Entra21.ExerciciosForTry
                 Console.Write("Nome: ");
                 var nome = Console.ReadLine().Trim().ToLower();
 
-                for (var idade = 0; idade <= 0;)
+                var idade = 0;
+                while (idade < 6)
                 {
                     try
                     {
@@ -67,7 +68,8 @@ namespace Entra21.ExerciciosForTry
                     }
                 }
 
-                while (peso <= 0)
+                var peso = 0.0;
+                while (peso < 15)
                 {
                     try
                     {
@@ -88,11 +90,37 @@ namespace Entra21.ExerciciosForTry
                 Console.Write("Sexo: ");
                 var sexo = Console.ReadLine().ToLower().Trim();
 
-                Console.Write("Altura: ");
-                var altura = Convert.ToDouble(Console.ReadLine());
+                var altura = 0.0;
+                while (altura < 1.30)
+                {
+                    try
+                    {
+                        Console.Write("Altura: ");
+                        altura = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Quantidade de gols marcados: ");
-                var quantidadeGolsMarcados = Convert.ToInt32(Console.ReadLine());
+                        if (altura < 1.30)
+                        {
+                            Console.WriteLine("Apenas acima de 1,30m.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Digite uma altura válida.");
+                    }
+                }
+                var quantidadeGolsMarcados = -1;
+                while (quantidadeGolsMarcados < 0)
+                {
+                    try
+                    {
+                        Console.Write("Quantidade de gols marcados: ");
+                        quantidadeGolsMarcados = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Digite um valor válido.");
+                    }
+                }
 
                 Console.Write("Quantidade de cartões amarelos recebidos: ");
                 var quantidadeAmarelosRecebidos = Convert.ToInt32(Console.ReadLine());
