@@ -19,17 +19,44 @@ namespace Entra21.ExerciciosForTry
             // ● Quantidade de carros que começam com a letra G;
             // ● Quantidade de carros que começam com a letra A.
 
-            Console.WriteLine("Quantos carros voccê deseja cadastrar?");
-            var quantidadeCarrosCadastrados = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+            var quantidadeCarrosCadastrados = 0;
+            while (quantidadeCarrosCadastrados <= 0)
+            {
+                try
+                {
+                    Console.WriteLine("Quantos carros voccê deseja cadastrar?");
+                    quantidadeCarrosCadastrados = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+
+                    if (quantidadeCarrosCadastrados <= 0)
+                    {
+                        Console.WriteLine("Vaor acima de 0.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Digite um valor válido.");
+                }
+            }
 
             int somaAno = 0, mediaAno = 0, somaG = 0, somaA = 0, anoCarro = 0;
             double somaValor = 0, mediaValor = 0, valorCarro = 0;
 
             for (var i = 0; i < quantidadeCarrosCadastrados; i++)
             {
-                Console.WriteLine("Modelo do carro:");
-                var modelo = Console.ReadLine().ToLower().Trim();
+                var modelo = "";
+                while (modelo.Length < 2)
+                {
+                    Console.WriteLine("Modelo do carro:");
+                    modelo = Console.ReadLine().ToLower().Trim();
+                    Console.Clear();
+
+                    if (modelo.Length < 2)
+                    {
+                        Console.WriteLine("Nome com 2 ou mais letra apenas.");
+                    }
+                }
 
                 while (valorCarro <= 0)
                 {

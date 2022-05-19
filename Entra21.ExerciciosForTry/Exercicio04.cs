@@ -57,7 +57,7 @@ namespace Entra21.ExerciciosForTry
             {
                 ordemCrescente = ordemCrescente + 1;
 
-                if (ordemCrescente % 2 == 1)
+                if (ordemCrescente % 2 != 0)
                 {
                     Console.WriteLine(ordemCrescente);
                 }

@@ -35,7 +35,8 @@ namespace Entra21.ExerciciosForTry
             // ➔ O jogador com a maior quantidade de cartões amarelos recebidos;
             // ➔ O jogador com a menor quantidade de cartões vermelhos recebidos.
 
-            string jogadorMenorPeso = "", jogadorMaiorPeso = "", jogadorMaiorAltura = "", jogadorMaiorNome = "", jogadorMenorNome = "", jogadorMenorAltura = "", jogadorMaisAmarelos = "";
+            var jogadorMenorNome = "                                                  ";
+            string jogadorMenorPeso = "", jogadorMaiorPeso = "", jogadorMaiorAltura = "", jogadorMaiorNome = "", jogadorMenorAltura = "", jogadorMaisAmarelos = "";
             string jogadorMenosAmarelos = "", jogadorMaisVermehlos = "", jogadorMenosVermehlos = "";
 
             int jogadoresF = 0, jogadoresM = 0, quantidadeMaisAmarelos = -2000, quantidadeMenosAmarelos = 2000, quantidadeMaislVermelhos = -2000, quantidadeMenosVermelhos = 2000;
@@ -46,8 +47,18 @@ namespace Entra21.ExerciciosForTry
             {
                 // Pedindo informções
 
-                Console.Write("Nome: ");
-                var nome = Console.ReadLine().Trim().ToLower();
+                var nome = "";
+                while ((nome.Length < 3) || (nome.Length > 50))
+                {
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine().Trim().ToLower();
+                    Console.Clear();
+
+                    if ((nome.Length < 3) || (nome.Length > 50))
+                    {
+                        Console.WriteLine("Mínimo 3 Letra, Máximo 50 Letra.");
+                    }
+                }
 
                 var idade = 0;
                 while (idade < 6)
@@ -56,6 +67,7 @@ namespace Entra21.ExerciciosForTry
                     {
                         Console.Write("Idade: ");
                         idade = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
 
                         if (idade < 6)
                         {
@@ -64,6 +76,7 @@ namespace Entra21.ExerciciosForTry
                     }
                     catch (Exception ex)
                     {
+                        Console.Clear();
                         Console.WriteLine("Digite uma idade váida.");
                     }
                 }
@@ -75,6 +88,7 @@ namespace Entra21.ExerciciosForTry
                     {
                         Console.Write("Peso: ");
                         peso = Convert.ToDouble(Console.ReadLine());
+                        Console.Clear();
 
                         if (peso < 15)
                         {
@@ -83,12 +97,23 @@ namespace Entra21.ExerciciosForTry
                     }
                     catch (FormatException ex)
                     {
+                        Console.Clear();
                         Console.WriteLine("Digite um peso válido.");
                     }
                 }
 
-                Console.Write("Sexo: ");
-                var sexo = Console.ReadLine().ToLower().Trim();
+                var sexo = "";
+                while ((sexo != "f") && (sexo != "feminino") && (sexo != "m") && (sexo != "masculino"))
+                {
+                    Console.Write("Sexo (M) ou (F): ");
+                    sexo = Console.ReadLine().ToLower().Trim();
+                    Console.Clear();
+
+                    if ((sexo != "f") && (sexo != "feminino") && (sexo != "m") && (sexo != "masculino"))
+                    {
+                        Console.WriteLine("Digite um dos sexos sugeridos.");
+                    }
+                }
 
                 var altura = 0.0;
                 while (altura < 1.30)
@@ -97,6 +122,7 @@ namespace Entra21.ExerciciosForTry
                     {
                         Console.Write("Altura: ");
                         altura = Convert.ToDouble(Console.ReadLine());
+                        Console.Clear();
 
                         if (altura < 1.30)
                         {
@@ -105,6 +131,7 @@ namespace Entra21.ExerciciosForTry
                     }
                     catch (Exception ex)
                     {
+                        Console.Clear();
                         Console.WriteLine("Digite uma altura válida.");
                     }
                 }
@@ -115,42 +142,61 @@ namespace Entra21.ExerciciosForTry
                     {
                         Console.Write("Quantidade de gols marcados: ");
                         quantidadeGolsMarcados = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+
+                        if (quantidadeGolsMarcados < 0)
+                        {
+                            Console.WriteLine("Digite um valor válido.");
+                        }
                     }
                     catch (Exception ex)
                     {
+                        Console.Clear();
                         Console.WriteLine("Digite um valor válido.");
                     }
                 }
 
-                Console.Write("Quantidade de cartões amarelos recebidos: ");
-                var quantidadeAmarelosRecebidos = Convert.ToInt32(Console.ReadLine());
+                var quantidadeAmarelosRecebidos = -1;
+                while (quantidadeAmarelosRecebidos < 0)
+                {
+                    try
+                    {
+                        Console.Write("Quantidade de cartões amarelos recebidos: ");
+                        quantidadeAmarelosRecebidos = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
 
-                Console.Write("Quantidade de cartões vermelhos reebidos: ");
-                var quantidadeVermelhosRecebidos = Convert.ToInt32(Console.ReadLine());
+                        if (quantidadeAmarelosRecebidos < 0)
+                        {
+                            Console.WriteLine("Digite um valor válido.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Digite um valor válido.");
+                    }
+                }
 
+                var quantidadeVermelhosRecebidos = -1;
+                while (quantidadeVermelhosRecebidos < 0)
+                {
+                    try
+                    {
+                        Console.Write("Quantidade de cartões vermelhos reebidos: ");
+                        quantidadeVermelhosRecebidos = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        if (quantidadeVermelhosRecebidos < 0)
+                        {
+                            Console.WriteLine("Digite um valor válido.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Digite um valor válido.");
+                    }
+                }
 
                 // Menor e Maior nome
 
@@ -159,12 +205,7 @@ namespace Entra21.ExerciciosForTry
                     jogadorMaiorNome = nome;
                 }
 
-                if (nome.Length < jogadorMaiorNome.Length)
-                {
-                    jogadorMenorNome = nome;
-                }
-
-                if (jogadorMenorNome.Length < jogadorMenorNome.Length)
+                if (nome.Length < jogadorMenorNome.Length)
                 {
                     jogadorMenorNome = nome;
                 }
@@ -199,11 +240,11 @@ namespace Entra21.ExerciciosForTry
 
                 // quantidade de cada sexo
 
-                if (sexo.StartsWith("f"))
+                if ((sexo == "feminino") || (sexo == "f"))
                 {
                     jogadoresF = jogadoresF + 1;
                 }
-                else if (sexo.StartsWith("m"))
+                else if ((sexo == "masculino") || (sexo == "m"))
                 {
                     jogadoresM = jogadoresM + 1;
                 }
@@ -238,29 +279,29 @@ namespace Entra21.ExerciciosForTry
             }
 
             Console.WriteLine("Jogador com o maior nome: " + jogadorMaiorNome +
-                "" +
-                "\nJogador com o menor nome: " + jogadorMenorNome +
-                "" +
-                "\nJogador com maior peso: " + jogadorMaiorPeso +
-                "" +
-                "\nJogador com o menor peso: " + jogadorMenorPeso +
-                "" +
-                "\nJogador com a maior altura: " + jogadorMaiorAltura +
-                "" +
-                "\nJogador com a menor altura: " + jogadorMenorAltura +
-                "" +
-                "\nJogador com mais amarelos: " + jogadorMaisAmarelos +
-                "" +
-                "\nJogador com menos amarelos: " + jogadorMenosAmarelos +
-                "" +
-                "\nJogador com mais vermelhos: " + jogadorMaisVermehlos +
-                "" +
-                "\nJogador com menos vermelhos: " + jogadorMenosVermehlos +
-                "" +
-                "\nQuantidade de jogadores do sexo M: " + jogadoresM +
-                "" +
-                "\nQuantidade de jogadoras do sexo F: " + jogadoresF +
-                "");
+                    "" +
+                    "\nJogador com o menor nome: " + jogadorMenorNome +
+                    "" +
+                    "\nJogador com maior peso: " + jogadorMaiorPeso +
+                    "" +
+                    "\nJogador com o menor peso: " + jogadorMenorPeso +
+                    "" +
+                    "\nJogador com a maior altura: " + jogadorMaiorAltura +
+                    "" +
+                    "\nJogador com a menor altura: " + jogadorMenorAltura +
+                    "" +
+                    "\nJogador com mais amarelos: " + jogadorMaisAmarelos +
+                    "" +
+                    "\nJogador com menos amarelos: " + jogadorMenosAmarelos +
+                    "" +
+                    "\nJogador com mais vermelhos: " + jogadorMaisVermehlos +
+                    "" +
+                    "\nJogador com menos vermelhos: " + jogadorMenosVermehlos +
+                    "" +
+                    "\nQuantidade de jogadores do sexo M: " + jogadoresM +
+                    "" +
+                    "\nQuantidade de jogadoras do sexo F: " + jogadoresF +
+                    "");
         }
     }
 }

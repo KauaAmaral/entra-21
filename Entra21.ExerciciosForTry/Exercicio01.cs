@@ -14,8 +14,17 @@ namespace Entra21.ExerciciosForTry
 
             for (var i = 0; i < 13; i++)
             {
-                Console.WriteLine("Nome da peça: ");
-                var nomePeca = Console.ReadLine();
+                var nomePeca = "";
+                while (nomePeca.Length < 3)
+                {
+                    Console.WriteLine("Nome da peça: ");
+                    nomePeca = Console.ReadLine();
+
+                    if (nomePeca.Length < 3)
+                    {
+                        Console.WriteLine("Apneas peça com 3 ou mais letras.");
+                    }
+                }
 
                 var valorPeca = 0.0;
 
