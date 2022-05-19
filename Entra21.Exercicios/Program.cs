@@ -19,14 +19,14 @@ Console.WriteLine(@"--------Menu-------
 
 var opcaoDesejada = 0;
 
-while (opcaoDesejada <= 0)
+while ((opcaoDesejada <= 0) || (opcaoDesejada > 17))
 {
     try
     {
         Console.WriteLine("Digite a opção desejada: ");
         opcaoDesejada = Convert.ToInt32(Console.ReadLine());
 
-        if (opcaoDesejada <= 0)
+        if ((opcaoDesejada <= 0) || (opcaoDesejada > 17))
         {
             Console.WriteLine(@"
 Apenas um número do menu
