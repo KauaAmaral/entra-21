@@ -5,18 +5,19 @@ Console.WriteLine(@"--------Menu-------
 1- Exercício 02
 3- Exercício 03
 4- Exercício 04
+5- Exercício 05
 ");
 
 var opcaoDesejada = 0;
 
-while ((opcaoDesejada <= 0) || (opcaoDesejada > 4))
+while ((opcaoDesejada <= 0) || (opcaoDesejada > 5))
 {
     try
     {
         Console.WriteLine("Digite a opção desejada: ");
         opcaoDesejada = Convert.ToInt32(Console.ReadLine());
 
-        if ((opcaoDesejada <= 0) || (opcaoDesejada > 4))
+        if ((opcaoDesejada <= 0) || (opcaoDesejada > 5))
         {
             Console.WriteLine(@"
 Apenas um número do menu
@@ -51,4 +52,9 @@ else if (opcaoDesejada == 4)
 {
     Exercicio04 exercicio04 = new Exercicio04();
     exercicio04.Executar();
+}
+else if (opcaoDesejada == 5)
+{
+    Exercicio05 exercicio05 = new Exercicio05();
+    exercicio05.Executar();
 }
