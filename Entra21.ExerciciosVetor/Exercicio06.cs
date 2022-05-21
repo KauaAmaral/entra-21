@@ -36,7 +36,7 @@ namespace Entra21.ExerciciosVetor
 
                         numeroMenor0 = false;
 
-                        if (idades[i] < 0)
+                        if (idades[i] <= 0)
                         {
                             Console.WriteLine("Apenas acima de 0");
                             numeroMenor0 = true;
