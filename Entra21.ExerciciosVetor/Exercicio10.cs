@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entra21.ExerciciosVetor
 {
-    internal class Exercicio09
+    internal class Exercicio10
     {
         public void Executar()
         {
