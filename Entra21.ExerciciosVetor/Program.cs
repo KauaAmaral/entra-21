@@ -37,7 +37,7 @@ Apenas um número do menu
     catch (Exception ex)
     {
         Console.WriteLine(@"
-Apenas um numero do menu
+Apenas um número do menu
 ");
     }
 }
