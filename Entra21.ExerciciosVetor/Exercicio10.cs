@@ -48,10 +48,12 @@ namespace Entra21.ExerciciosVetor
                 quantidade = quantidade - 1;
             }
 
+            Console.WriteLine("Soma: ");
+
             for (var i = 0; i < numerosSolicitados.Length; i++)
             {
-                Console.WriteLine("Numeros Solicitados: " + numerosSolicitados[i] +
-                                 "\nSoma: " + numerosSomados[i]);
+
+                Console.WriteLine(numerosSomados[i]);
             }
         }
     }
