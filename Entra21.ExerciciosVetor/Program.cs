@@ -10,18 +10,23 @@ Console.WriteLine(@"--------Menu-------
 7- Exercício 07
 8- Exercício 08
 9- Exercício 09
+10- Exercício 10
+11- Exercício 11
+12- Exercício 12
+13- Exercício 13
+14- Exercício 14
 ");
 
 var opcaoDesejada = 0;
 
-while ((opcaoDesejada <= 0) || (opcaoDesejada > 9))
+while ((opcaoDesejada <= 0) || (opcaoDesejada > 14))
 {
     try
     {
         Console.WriteLine("Digite a opção desejada: ");
         opcaoDesejada = Convert.ToInt32(Console.ReadLine());
 
-        if ((opcaoDesejada <= 0) || (opcaoDesejada > 9))
+        if ((opcaoDesejada <= 0) || (opcaoDesejada > 14))
         {
             Console.WriteLine(@"
 Apenas um número do menu
@@ -81,4 +86,29 @@ else if (opcaoDesejada == 9)
 {
     Exercicio09 exercicio09 = new Exercicio09();
     exercicio09.Executar();
+}
+else if (opcaoDesejada == 10)
+{
+    Exercicio10 exercicio10 = new Exercicio10();
+    exercicio10.Executar();
+}
+else if (opcaoDesejada == 11)
+{
+    Exercicio11 exercicio11 = new Exercicio11();
+    exercicio11.Executar();
+}
+else if (opcaoDesejada == 12)
+{
+    Exercicio12 exercicio12 = new Exercicio12();
+    exercicio12.Executar();
+}
+else if (opcaoDesejada == 13)
+{
+    Exercicio13 exercicio13 = new Exercicio13();
+    exercicio13.Executar();
+}
+else if (opcaoDesejada == 14)
+{
+    Exercicio14 exercicio14 = new Exercicio14();
+    exercicio14.Executar();
 }

@@ -17,18 +17,18 @@ namespace Entra21.ExerciciosVetor
             // Obrigatório utilização de for para preencher o vetor 2.
             // O tamanho do vetor você escolhe, mínimo de 5 posições.
 
-                  var quantidade = 5;
-          string[] nomesVetor1 = new string[quantidade];
+            var quantidade = 5;
+            string[] nomesVetor1 = new string[quantidade];
             string[] nomesVetor2 = new string[quantidade];
-		
+
 
             for (var i = 0; i < nomesVetor1.Length; i++)
             {
-                 var nomeMenosLetras = true;
+                var nomeMenosLetras = true;
                 while (nomeMenosLetras == true)
                 {
                     Console.Write("Nome: ");
-                    nomesVetor1[i] = Console.ReadLine().Trim();    
+                    nomesVetor1[i] = Console.ReadLine().Trim();
                     Console.Clear();
 
                     nomeMenosLetras = false;
@@ -44,18 +44,18 @@ namespace Entra21.ExerciciosVetor
 
             for (var i = 0; i < nomesVetor1.Length; i++)
             {
-                nomesVetor2[i] = nomesVetor1[quantidade-1];
-				quantidade = quantidade - 1;
+                nomesVetor2[i] = nomesVetor1[quantidade - 1];
+                quantidade = quantidade - 1;
             }
-		 for (var i = 0; i < nomesVetor1.Length; i++)
+            for (var i = 0; i < nomesVetor1.Length; i++)
             {
                 Console.WriteLine("Nomes: " + nomesVetor1[i] +
-					"\nNomes Invertido: " + nomesVetor2[i]);
-		 }
+                    "\nNomes Invertido: " + nomesVetor2[i]);
+            }
         }
 
 
 
     }
 }
-}
+
