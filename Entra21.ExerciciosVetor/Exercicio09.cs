@@ -45,8 +45,6 @@ namespace Entra21.ExerciciosVetor
             for (var i = 0; i < nomesVetor1.Length; i++)
             {
                 nomesVetor2[i] = nomesVetor1[quantidade-1];
-				Console.WriteLine("Valore Original" + nomesVetor1 +
-								 "\nValores Invertidos" + nomesVetor2);
 				quantidade = quantidade - 1;
             }
 		 for (var i = 0; i < nomesVetor1.Length; i++)
