@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entra21.ExerciciosVetor
 {
-    internal class Exercicio09
+    internal class Exercicio11
     {
         public void Executar()
         {
@@ -15,7 +15,7 @@ namespace Entra21.ExerciciosVetor
         // somente os números pares do vetor 1, o outro irá armazenar somente os números ímpares do vetor 1.
         // Obrigatório utilização de for para preencher o vetor 2 e 3.
         
-		    var quantidadePares = 0;
+		   var quantidadePares = 0;
 				var quantidadeImpares = 0;
 		 double[] numeros = new double[10];
 		 double[] numerosImpares = new double[10];
@@ -24,9 +24,16 @@ namespace Entra21.ExerciciosVetor
 
             for (var i = 0; i < numeros.Length; i++)
             {
-                        Console.Write("Numeros: ");
+				var numeroLetra = true;
+                while (numeroLetra == true)
+				{
+				try
+				{
+				Console.Write("Numeros: ");
                         numeros[i] = Convert.ToDouble(Console.ReadLine());
                         Console.Clear();
+					
+					numeroLetra = false;
 				
                         if (numeros[i] % 2 == 0)
                         {
@@ -40,6 +47,14 @@ namespace Entra21.ExerciciosVetor
                            numerosImpares[quantidadeImpares] = numeros[i];
 						   quantidadeImpares = quantidadeImpares + 1;
                         }
+				}
+					catch (Exception ex)
+					{
+						Console.Clear();
+						numeroLetra = true;
+						Console.Write("Valor Inválido.");
+					}
+				}
                 }
             
             for (var i = 0; i < quantidadeImpares; i++)
