@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExerciciosWhile", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExerciciosForTry", "Entra21.ExerciciosForTry\Entra21.ExerciciosForTry.csproj", "{C80B41DA-41F3-4AF6-97E8-A12C50CC52CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemploVetor", "Entra21.ExemploVetor\Entra21.ExemploVetor.csproj", "{19EA878D-EE3B-4C78-8D0A-FF67F418F865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemploVetor", "Entra21.ExemploVetor\Entra21.ExemploVetor.csproj", "{19EA878D-EE3B-4C78-8D0A-FF67F418F865}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExerciciosVetor", "Entra21.ExerciciosVetor\Entra21.ExerciciosVetor.csproj", "{1AE91B19-E740-43AC-B0E3-B77C9C4C9C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExerciciosVetor", "Entra21.ExerciciosVetor\Entra21.ExerciciosVetor.csproj", "{1AE91B19-E740-43AC-B0E3-B77C9C4C9C0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemplosOrientacaoObjetos", "Entra21.ExemplosOrientacaoObjetos\Entra21.ExemplosOrientacaoObjetos.csproj", "{AE1F4446-7F0F-4970-8C6C-3C740D987EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemplosOrientacaoObjetos.Tests", "Entra21.ExemplosOrientacaoObjetos.Tests\Entra21.ExemplosOrientacaoObjetos.Tests.csproj", "{B7A954B2-89D8-43FB-B9DB-A9B6F7A7D4C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{1AE91B19-E740-43AC-B0E3-B77C9C4C9C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AE91B19-E740-43AC-B0E3-B77C9C4C9C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AE91B19-E740-43AC-B0E3-B77C9C4C9C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1F4446-7F0F-4970-8C6C-3C740D987EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1F4446-7F0F-4970-8C6C-3C740D987EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1F4446-7F0F-4970-8C6C-3C740D987EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1F4446-7F0F-4970-8C6C-3C740D987EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7A954B2-89D8-43FB-B9DB-A9B6F7A7D4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A954B2-89D8-43FB-B9DB-A9B6F7A7D4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A954B2-89D8-43FB-B9DB-A9B6F7A7D4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A954B2-89D8-43FB-B9DB-A9B6F7A7D4C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
