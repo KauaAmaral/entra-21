@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
 {
-    public class ExermploLivro
+    public class ExemploLivro
     {
         public void Executar()
         {
@@ -20,9 +20,9 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
             livro.Releituras = 0;
             livro.QuantidadePaginasLidas = 120;
             
-            Console.WriteLine($@"Título e Autor do livro: {livro.ApresentarTituloAutor()}
-            Quantidade de páginas para ler: {livro.ApresentarQuantidadePaginasParaLer()}
-            Quantidade de páginas lidas no total: {livro.ApresentarQuantidadePaginasLidasNoTotal()}");
+            Console.WriteLine($@"{livro.ApresentarTituloAutor()}
+Quantidade de páginas para ler: {livro.ApresentarQuantidadePaginasParaLer()}
+Quantidade de páginas lidas no total: {livro.ApresentarQuantidadePaginasLidasNoTotal()}");
         }
     }
 }

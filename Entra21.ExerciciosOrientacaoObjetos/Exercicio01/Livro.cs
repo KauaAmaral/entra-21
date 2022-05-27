@@ -34,7 +34,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
             var titulo = Titulo;
             var autor = Autor;
             
-            return titulo + autor;
+            return "Autor do livro: " + autor + "\nTítulo do livro: " + titulo;
         }
 
         public int ApresentarQuantidadePaginasParaLer()
@@ -53,10 +53,5 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
 
             return quantidadePaginasLidasNoTotal;
         }
-
-
-
-
-
     }
 }
