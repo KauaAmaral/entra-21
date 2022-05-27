@@ -19,7 +19,10 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
             livro.QuantidadePaginas = 198;
             livro.Releituras = 0;
             livro.QuantidadePaginasLidas = 120;
-
+            
+            Console.WriteLine($@"Título e Autor do livro: {livro.ApresentarTituloAutor()}
+            Quantidade de páginas para ler: {ApresentarQuantidadePaginasParaLer()}
+            Quantidade de páginas lidas no total: {ApresentarQuantidadePaginasLidasNoTotal()}");
         }
     }
 }
