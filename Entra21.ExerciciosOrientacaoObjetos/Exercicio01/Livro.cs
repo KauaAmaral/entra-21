@@ -29,10 +29,12 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio01
         public int QuantidadePaginas, QuantidadePaginasLidas, Releituras;
         public DateTime DataLancamento;
 
-        public void ApresentarTituloAutor()
+        public string ApresentarTituloAutor()
         {
-            Console.WriteLine(@$"Título: {Titulo}
-Altor: {Autor}");
+            var titulo = Titulo;
+            var autor = Autor;
+            
+            return titulo + autor;
         }
 
         public int ApresentarQuantidadePaginasParaLer()
