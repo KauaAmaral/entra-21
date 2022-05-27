@@ -21,52 +21,90 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio02
         public string TemperaturaDeOrigem, TemperaturaDeDestino;
         public double Temperatura;
 
-        public double CalcularCelsius()
+        public double CalcularFahrenheitParaCelsius()
         {
             var temperaturaFinal = 0.0;
+
+            temperaturaFinal = (Temperatura - 32) * 1.8;
+
+            return temperaturaFinal;
+        }
+
+        public double CalcularKelvinParaCelsius()
+        {
+            var temperaturaFinal = 0.0;
+
+            temperaturaFinal = Temperatura - 273.15;
+
+            return temperaturaFinal;
+        }
+
+        public double CalcularCelsiusParaKelvin()
+        {
+            var temperaturaFinal = 0.0;
+
+            temperaturaFinal = Temperatura + 273.15;
+
+            return temperaturaFinal;
+        }
+
+        public double CalcularFahrenheitParaKelvin()
+        {
+            var temperaturaFinal = 0.0;
+
+            temperaturaFinal = (Temperatura - 32) * 5 / 9 + 273.15;
+
+            return temperaturaFinal;
+        }
+
+        public double CalcularKelvinParaFahrenheit()
+        {
+            var temperaturaFinal = 0.0;
+
+            temperaturaFinal = (Temperatura - 273.15) * 5 / 9 + 32;
+
+            return temperaturaFinal;
+        }
+
+        public double CalcularCelsiusParaFahrenheit()
+        {
+            var temperaturaFinal = 0.0;
+
+            temperaturaFinal = Temperatura * 1.8 + 32;
+
+            return temperaturaFinal;
+        }
+
+        public double ApresentarTemperaturaConvertida()
+        {
+            var apresentarTemperaturaConvertida = 0.0;
 
             if (TemperaturaDeOrigem == "fahrenheit" && TemperaturaDeDestino == "celsius")
             {
-                temperaturaFinal = (Temperatura - 32) * 1.8;
+                apresentarTemperaturaConvertida = CalcularFahrenheitParaCelsius();
             }
             else if (TemperaturaDeOrigem == "kelvin" && TemperaturaDeDestino == "celsius")
             {
-                temperaturaFinal = Temperatura - 273.15;
+                apresentarTemperaturaConvertida = CalcularKelvinParaCelsius();
             }
-
-            return temperaturaFinal;
-        }
-
-        public double CalcularKelvin()
-        {
-            var temperaturaFinal = 0.0;
-
-            if (TemperaturaDeOrigem == "celsius" && TemperaturaDeDestino == "kelvin")
+            else if (TemperaturaDeOrigem == "celsius" && TemperaturaDeDestino == "kelvin")
             {
-                temperaturaFinal = Temperatura + 273.15;
+                apresentarTemperaturaConvertida = CalcularCelsiusParaKelvin();
             }
             else if (TemperaturaDeOrigem == "fahrenheit" && TemperaturaDeDestino == "kelvin")
             {
-                temperaturaFinal = (Temperatura - 32) * 5 / 9 + 273.15;
+                apresentarTemperaturaConvertida = CalcularFahrenheitParaKelvin();
             }
-
-            return temperaturaFinal;
-        }
-
-        public double CalcularFahreinheit()
-        {
-            var temperaturaFinal = 0.0;
-
-            if (TemperaturaDeOrigem == "kelvin" && TemperaturaDeDestino == "fahrenheit")
+            else if (TemperaturaDeOrigem == "kelvin" && TemperaturaDeDestino == "fahrenheit")
             {
-                temperaturaFinal = (Temperatura - 273.15) * 5 / 9 + 32;
+                apresentarTemperaturaConvertida = CalcularKelvinParaFahrenheit();
             }
             else if (TemperaturaDeOrigem == "celsius" && TemperaturaDeDestino == "fahrenheit")
             {
-                temperaturaFinal = Temperatura * 1.8 + 32;
+                apresentarTemperaturaConvertida = CalcularCelsiusParaFahrenheit();
             }
 
-            return temperaturaFinal;
+            return apresentarTemperaturaConvertida;
         }
     }
 }
