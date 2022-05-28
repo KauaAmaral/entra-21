@@ -11,8 +11,8 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio02
         public void Executar()
         {
             var temperatura = new Temperaturas();
-            temperatura.TemperaturaDeOrigem = "celsius";
-            temperatura.TemperaturaDeDestino = "fahrenheit";
+            temperatura.TemperaturaDeOrigem = "fahrenheit";
+            temperatura.TemperaturaDeDestino = "celsius";
             temperatura.Temperatura = 300;
 
             Console.WriteLine(temperatura.ApresentarTemperaturaConvertida());
