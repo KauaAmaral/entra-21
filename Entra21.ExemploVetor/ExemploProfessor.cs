@@ -17,7 +17,7 @@ namespace Entra21.ExemploVetor
                  .AddRow("Xau", "Para", "Você");
 
             table.Write();
-            Console.WriteLine();
+            
 
         }
     }
