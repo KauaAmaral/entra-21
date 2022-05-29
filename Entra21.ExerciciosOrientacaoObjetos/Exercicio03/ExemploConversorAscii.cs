@@ -11,7 +11,9 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio03
         public void Executar()
         {
             var conversorAscii = new ConversorAscii();
-            conversorAscii.Caracter = "m";
+            Console.Write("Digite uma letra: ");
+            conversorAscii.Caracter = Console.ReadLine().Trim();
+            Console.Clear();
 
             Console.WriteLine($@"Conversor Ascii de: {conversorAscii.Caracter} = {conversorAscii.ObterCodigoAscii()}");
         }

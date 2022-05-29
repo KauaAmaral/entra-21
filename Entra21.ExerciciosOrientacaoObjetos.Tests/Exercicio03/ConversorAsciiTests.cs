@@ -28,7 +28,6 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Tests.Exercicio03
             }
 
             obterCodigoAscii.Should().Be(resultadoFinal);
-            //
         }
     }
 }
