@@ -50,7 +50,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
 
         public int QuantidadeDiasLetivos, QuantidadePresencas;
 
-        double mediaMatematica = 0.0;
+        double mediaMatematica = 0;
         public double Calcular_Media_Matematica()
         {
             for (int i = 0; i < 4; i++)
@@ -63,7 +63,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaMatematica;
         }
 
-        double mediaPortugues = 0.0;
+        double mediaPortugues = 0;
         public double Calcular_Media_Portugues()
         {
             for (int i = 0; i < 4; i++)
@@ -76,7 +76,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaPortugues;
         }
 
-        double mediaFisica = 0.0;
+        double mediaFisica = 0;
         public double Calcular_Media_Fisica()
         {
             for (int i = 0; i < 4; i++)
@@ -89,7 +89,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaFisica;
         }
 
-        double mediaQuimica = 0.0;
+        double mediaQuimica = 0;
         public double Calcular_Media_Quimica()
         {
             for (int i = 0; i < 4; i++)
@@ -102,7 +102,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaQuimica;
         }
 
-        double mediaGeografia = 0.0;
+        double mediaGeografia = 0;
         public double Calcular_Media_Geografia()
         {
             for (int i = 0; i < 4; i++)
@@ -115,7 +115,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaGeografia;
         }
 
-        double mediaHistoria = 0.0;
+        double mediaHistoria = 0;
         public double Calcular_Media_Historia()
         {
             for (int i = 0; i < 4; i++)
@@ -128,7 +128,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaHistoria;
         }
 
-        double mediaFilosofia = 0.0;
+        double mediaFilosofia = 0;
         public double Calcular_Media_Filosofia()
         {
             for (int i = 0; i < 4; i++)
@@ -141,7 +141,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaFilosofia;
         }
 
-        double mediaSociologia = 0.0;
+        double mediaSociologia = 0;
         public double Calcular_Media_Sociologia()
         {
             for (int i = 0; i < 4; i++)
@@ -154,7 +154,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaSociologia;
         }
 
-        double mediaBiologia = 0.0;
+        double mediaBiologia = 0;
         public double Calcular_Media_Biologia()
         {
             for (int i = 0; i < 4; i++)
@@ -167,7 +167,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return mediaBiologia;
         }
 
-        double mediaEducacaoFisica = 0.0;
+        double mediaEducacaoFisica = 0;
         public double Calcular_Media_EducacaoFisica()
         {
             for (int i = 0; i < 4; i++)
@@ -286,27 +286,25 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return calcularMediaGeral;
         }
 
-        public string Apresentar_Boletim()
-        {
-            var apresentarBoletim = new ConsoleTable("Matéria", "Nota 1", "Nota 2", "Nota 3", "Nota 4", "Média");
-            apresentarBoletim.AddRow("Matemática",NotasMatematica[1], NotasMatematica[2], NotasMatematica[3], NotasMatematica[4], mediaMatematica)
-                 .AddRow("Português", NotasPortugues[1], NotasPortugues[2], NotasPortugues[3],NotasPortugues[4], mediaPortugues)
-                 .AddRow("Física", NotasFisica[1], NotasFisica[2], NotasFisica[3], NotasFisica[4], mediaFisica)
-                 .AddRow("Química", NotasQuimica[1], NotasQuimica[2], NotasQuimica[3], NotasQuimica[4], mediaQuimica)
-                 .AddRow("Geografia", NotasGeografia[1], NotasGeografia[2], NotasGeografia[3], NotasGeografia[4], mediaGeografia)
-                 .AddRow("Hitória", NotasHistoria[1], NotasHistoria[2], NotasHistoria[3], NotasHistoria[4], mediaHistoria)
-                 .AddRow("Filosofia", NotasFilosofia[1], NotasFilosofia[2], NotasFilosofia[3], NotasFilosofia[4], mediaFilosofia)
-                 .AddRow("Sociologia", NotasSociologia[1], NotasSociologia[2], NotasSociologia[3], NotasSociologia[4], mediaSociologia)
-                 .AddRow("Biologia", NotasBiologia[1], NotasBiologia[2], NotasBiologia[3], NotasBiologia[4], mediaBiologia)
-                 .AddRow("Educação Fisica", NotasEducacaoFisica[1], NotasEducacaoFisica[2], NotasEducacaoFisica[3], NotasEducacaoFisica[4], mediaEducacaoFisica)
-                 .AddRow("Percentual de presença", "", "", "", "", Calcular_Percentual_Presenca)
-                 .AddRow("Exame", "", "", "", "", Validar_Em_Exame)
-                 .AddRow("Aprovado", "", "", "", "", Validar_Aprovado);
+        //public ConsoleTable Apresentar_Boletim()
+        //{
+        //    var apresentarBoletim = new ConsoleTable("Matéria", "Nota 1", "Nota 2", "Nota 3", "Nota 4", "Média");
+        //    apresentarBoletim.AddRow("Matemática",NotasMatematica[1], NotasMatematica[2], NotasMatematica[3], NotasMatematica[4], mediaMatematica)
+        //         .AddRow("Português", NotasPortugues[1], NotasPortugues[2], NotasPortugues[3],NotasPortugues[4], mediaPortugues)
+        //         .AddRow("Física", NotasFisica[1], NotasFisica[2], NotasFisica[3], NotasFisica[4], mediaFisica)
+        //         .AddRow("Química", NotasQuimica[1], NotasQuimica[2], NotasQuimica[3], NotasQuimica[4], mediaQuimica)
+        //         .AddRow("Geografia", NotasGeografia[1], NotasGeografia[2], NotasGeografia[3], NotasGeografia[4], mediaGeografia)
+        //         .AddRow("Hitória", NotasHistoria[1], NotasHistoria[2], NotasHistoria[3], NotasHistoria[4], mediaHistoria)
+        //         .AddRow("Filosofia", NotasFilosofia[1], NotasFilosofia[2], NotasFilosofia[3], NotasFilosofia[4], mediaFilosofia)
+        //         .AddRow("Sociologia", NotasSociologia[1], NotasSociologia[2], NotasSociologia[3], NotasSociologia[4], mediaSociologia)
+        //         .AddRow("Biologia", NotasBiologia[1], NotasBiologia[2], NotasBiologia[3], NotasBiologia[4], mediaBiologia)
+        //         .AddRow("Educação Fisica", NotasEducacaoFisica[1], NotasEducacaoFisica[2], NotasEducacaoFisica[3], NotasEducacaoFisica[4], mediaEducacaoFisica)
+        //         .AddRow("Percentual de presença", "", "", "", "", Calcular_Percentual_Presenca())
+        //         .AddRow("Exame", "", "", "", "", Validar_Em_Exame())
+        //         .AddRow("Aprovado", "", "", "", "", Validar_Aprovado());
 
-            string apresentar = Convert.ToString(apresentarBoletim);
-
-            return apresentar;
-        }
+        //    return apresentarBoletim;
+        //}
 
     }
 }
