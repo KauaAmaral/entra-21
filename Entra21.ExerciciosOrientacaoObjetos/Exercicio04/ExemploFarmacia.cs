@@ -29,14 +29,10 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             farmacia.PrecoProduto[2] = 10.89;
             
             Console.WriteLine($@"{farmacia.ApresentarTotalDoPedidoPorCategoriaDeProduto()}
-                              
-                             {farmacia.ApresentarQuantidadePorCategoria()}
-                             
-                             {farmacia.ApresentarNomeProdutoMaisCaro()}
-                             
-                             {farmacia.ApresentarNomeCategoriaProdutoMaisBarato()}
-                             
-                             {farmacia.ApresentarTotalDoPedido()}");
+{farmacia.ApresentarQuantidadePorCategoria()}
+{farmacia.ApresentarNomeProdutoMaisCaro()}
+{farmacia.ApresentarNomeCategoriaProdutoMaisBarato()}
+{farmacia.ApresentarTotalDoPedido()}");
 
 
         }

@@ -1,6 +1,7 @@
 ﻿using Entra21.ExerciciosOrientacaoObjetos.Exercicio01;
 using Entra21.ExerciciosOrientacaoObjetos.Exercicio02;
 using Entra21.ExerciciosOrientacaoObjetos.Exercicio03;
+using Entra21.ExerciciosOrientacaoObjetos.Exercicio04;
 using Entra21.ExerciciosOrientacaoObjetos.Exercicio05;
 
 Console.WriteLine(@"--------Menu-------
@@ -50,6 +51,11 @@ else if (opcaoDesejada == 3)
 {
     ExemploConversorAscii exemploConversorAscii = new ExemploConversorAscii();
     exemploConversorAscii.Executar();
+}
+else if (opcaoDesejada == 4)
+{
+    ExemploFarmacia exemploFarmacia = new ExemploFarmacia();
+    exemploFarmacia.Executar();
 }
 else if (opcaoDesejada == 5)
 {

@@ -122,7 +122,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             {
                 if (PrecoProduto[i] > produtoMaisCaro)
                 {
-                    produtoMaisCaro = PrecoProduto[i]
+                    produtoMaisCaro = PrecoProduto[i];
                     nomeProdutoMaisCaro = NomeProduto[i];
                 }
             }
