@@ -111,7 +111,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             //     .AddRow("Percentual de presença", "", "", "", "", boletim.Calcular_Percentual_Presenca())
             //     .AddRow("Exame", "", "", "", "", boletim.Validar_Em_Exame())
             //     .AddRow("Aprovado", "", "", "", "", boletim.Validar_Aprovado());
-
+                
             //apresentarBoletim.Write();
         }
     }

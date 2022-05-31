@@ -1,4 +1,4 @@
-﻿using ConsoleTables;
+﻿        using ConsoleTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +51,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         public int QuantidadeDiasLetivos, QuantidadePresencas;
 
         double mediaMatematica = 0;
-        public double Calcular_Media_Matematica()
+        public double CalcularMediaMatematica()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -64,7 +64,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaPortugues = 0;
-        public double Calcular_Media_Portugues()
+        public double CalcularMediaPortugues()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -77,7 +77,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaFisica = 0;
-        public double Calcular_Media_Fisica()
+        public double CalcularMediaFisica()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -90,7 +90,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaQuimica = 0;
-        public double Calcular_Media_Quimica()
+        public double CalcularMediaQuimica()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -103,7 +103,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaGeografia = 0;
-        public double Calcular_Media_Geografia()
+        public double CalcularMediaGeografia()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -116,7 +116,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaHistoria = 0;
-        public double Calcular_Media_Historia()
+        public double CalcularMediaHistoria()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -129,7 +129,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaFilosofia = 0;
-        public double Calcular_Media_Filosofia()
+        public double CalcularMediaFilosofia()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -142,7 +142,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaSociologia = 0;
-        public double Calcular_Media_Sociologia()
+        public double CalcularMediaSociologia()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -155,7 +155,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaBiologia = 0;
-        public double Calcular_Media_Biologia()
+        public double CalcularMediaBiologia()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -168,7 +168,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double mediaEducacaoFisica = 0;
-        public double Calcular_Media_EducacaoFisica()
+        public double CalcularMediaEducacaoFisica()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -181,7 +181,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double quantidadeFaltas = 0;
-        public double Calcular_Quantidade_Faltas()
+        public double CalcularQuantidadeFaltas()
         {
             quantidadeFaltas = QuantidadeDiasLetivos - QuantidadePresencas;
 
@@ -189,14 +189,14 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         double calcularPercentualFaltas = 0;
-        public double Calcular_Percentual_Faltas()
+        public double CalcularPercentualFaltas()
         {
             calcularPercentualFaltas = (quantidadeFaltas / QuantidadeDiasLetivos) * 100;
 
             return calcularPercentualFaltas;
         }
 
-        public double Calcular_Percentual_Presenca()
+        public double CalcularPercentualPresenca()
         {
             var calcularPercentualPresenca = 0.0;
 
@@ -207,7 +207,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
 
         int quantidadeMateriasAbaixoMedia = 0;
         bool validarEmExame = false;
-        public bool Validar_Em_Exame()
+        public bool ValidarEmExame()
         {
             if (mediaMatematica < 7)
             {
@@ -255,7 +255,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
         }
 
         bool validarReprovado = false;
-        public bool Validar_Reprovado()
+        public bool ValidarReprovado()
         {
             if (quantidadeMateriasAbaixoMedia > 3 || calcularPercentualFaltas > 25)
             {
@@ -265,7 +265,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return validarReprovado;
         }
 
-        public bool Validar_Aprovado()
+        public bool ValidarAprovado()
         {
             var validarAprovado = false;
 
@@ -277,7 +277,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio05
             return validarAprovado;
         }
 
-        public double Calcular_Media_Geral()
+        public double CalcularMediaGeral()
         {
             var calcularMediaGeral = mediaMatematica + mediaPortugues + mediaFisica + mediaQuimica + mediaGeografia + mediaHistoria + mediaFilosofia + mediaSociologia + mediaBiologia + mediaEducacaoFisica;
 
