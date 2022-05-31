@@ -27,6 +27,16 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             farmacia.NomeProduto[2] = "Paracetamol";
             farmacia.CategoriaProduto[2] = farmacia.Categoria[2];
             farmacia.PrecoProduto[2] = 10.89;
+            
+            Console.WriteLine($@"Preço total por categoria: {farmacia.ApresentarTotalDoPedidoPorCategoriaDeProduto()}
+                              
+                             Quantidade por categoria: {farmacia.ApresentarQuantidadePorCategoria()}
+                             
+                             {farmacia.ApresentarNomeProdutoMaisCaro()}
+                             
+                             {farmacia.ApresentarNomeCategoriaProdutoMaisBarato()}
+                             
+                             {farmacia.ApresentarTotalDoPedido}");
 
 
         }
