@@ -115,7 +115,39 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
 
         public string ApresentarNomeProdutoMaisCaro()
         {
-
+            double produtoMaisCaro = double.MinValue;
+            string nomeProdutoMaisCaro = "";
+            
+            for (int i = 0; i < 3; i++)
+            {
+                if (PrecoProduto[i] > produtoMaisCaro)
+                {
+                    produtoMaisCaro = PrecoProduto[i]
+                    nomeProdutoMaisCaro = NomeProduto[i];
+                }
+            }
+            
+            return "Nome do produto mais caro: " + nomeProdutoMaisCaro;
+        }
+        
+        public string ApresentarNomeCategoriaProdutoMaisBarato()
+        {
+            double produtoMaisBarato = double.MaxValue;
+            string nomeProdutoMaisBarato = "";
+            string categoriaProdutoMaisBarato = "";
+            
+            for (int i = 0; i < 3; i++)
+            {
+                if (PrecoProduto[i] < produtoMaisBarato)
+                {
+                    produtoMaisBarato = PrecoProduto[i];
+                    nomeProdutoMaisBarato = NomeProduto[i];
+                    categoriaProdutoMaisBarato = CategoriaProduto[i];
+                }
+            }
+            
+            return "Nome do produto mais barato: " + nomeProdutoMaisBarato +
+                "\nCategoria do produto mais barato: " + categoriaProdutoMaisBarato;
         }
 
     }
