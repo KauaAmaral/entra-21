@@ -36,7 +36,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
                              
                              {farmacia.ApresentarNomeCategoriaProdutoMaisBarato()}
                              
-                             {farmacia.ApresentarTotalDoPedido}");
+                             {farmacia.ApresentarTotalDoPedido()}");
 
 
         }
