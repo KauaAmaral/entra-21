@@ -108,9 +108,9 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
                 }
             }
 
-            return "Quantidade total de: " + Categoria[0] + ": R$" + quantidadeCategoria[0] +
-                "\nQuantidade total de: " + Categoria[1] + ": R$" + quantidadeCategoria[1] +
-                "\nQuantidade total de: " + Categoria[2] + ": R$" + quantidadeCategoria[2];
+            return "Quantidade total de: " + Categoria[0] + ": " + quantidadeCategoria[0] +
+                "\nQuantidade total de: " + Categoria[1] + ": " + quantidadeCategoria[1] +
+                "\nQuantidade total de: " + Categoria[2] + ": " + quantidadeCategoria[2];
         }
 
         public string ApresentarNomeProdutoMaisCaro()
