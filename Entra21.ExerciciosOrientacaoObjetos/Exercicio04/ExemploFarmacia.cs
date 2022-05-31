@@ -28,9 +28,9 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             farmacia.CategoriaProduto[2] = farmacia.Categoria[2];
             farmacia.PrecoProduto[2] = 10.89;
             
-            Console.WriteLine($@"Preço total por categoria: {farmacia.ApresentarTotalDoPedidoPorCategoriaDeProduto()}
+            Console.WriteLine($@"{farmacia.ApresentarTotalDoPedidoPorCategoriaDeProduto()}
                               
-                             Quantidade por categoria: {farmacia.ApresentarQuantidadePorCategoria()}
+                             {farmacia.ApresentarQuantidadePorCategoria()}
                              
                              {farmacia.ApresentarNomeProdutoMaisCaro()}
                              
