@@ -88,7 +88,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             {
                 if (CategoriaProduto[i] == Categoria[0])
                 {
-                    quantidadeCategoria[0] = quantidadeCategoria[0] + PrecoProduto[i];
+                    quantidadeCategoria[0] = quantidadeCategoria[0] + 1;
                 }
             }
 
@@ -96,7 +96,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             {
                 if (CategoriaProduto[i] == Categoria[1])
                 {
-                    quantidadeCategoria[1] = quantidadeCategoria[1] + PrecoProduto[i];
+                    quantidadeCategoria[1] = quantidadeCategoria[1] + 1;
                 }
             }
 
@@ -104,7 +104,7 @@ namespace Entra21.ExerciciosOrientacaoObjetos.Exercicio04
             {
                 if (CategoriaProduto[i] == Categoria[2])
                 {
-                    quantidadeCategoria[2] = quantidadeCategoria[2] + PrecoProduto[i];
+                    quantidadeCategoria[2] = quantidadeCategoria[2] + 1;
                 }
             }
 
