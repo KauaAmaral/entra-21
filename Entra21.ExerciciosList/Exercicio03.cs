@@ -22,6 +22,7 @@ namespace Entra21.ExerciciosList
 
             Console.WriteLine("Nota 1: ");
             notas.Add(Convert.ToDouble(Console.ReadLine()));
+
             Console.Clear();
 
             Console.WriteLine("Nota 2: ");
@@ -40,8 +41,6 @@ Nota 3: {notas[2]}");
 
             Console.WriteLine($@"
 Média: {mediaNotas}");
-
-
         }
     }
 }
