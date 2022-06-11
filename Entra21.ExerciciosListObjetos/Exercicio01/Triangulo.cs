@@ -9,6 +9,8 @@
 
         public bool ValidarTriangulo()
         {
+
+
             if (Lado1 == Lado2 && Lado2 == Lado3)
             {
                 return true;
