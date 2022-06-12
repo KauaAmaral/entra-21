@@ -45,7 +45,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             }
         }
 
-        public void Apagar(int codigoParaApagar)
+        public void Apagar(Endereco enderecoParaApagar)
         {
             // Percorre a lista de enderecos afim de encontrar o endereco que deve ser removido
             for (var i = 0;i < enderecos.Count; i++)
@@ -53,7 +53,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
                 // Obtem o endereco percorrido
                 var endereco = enderecos[i];
 
-                if (endereco.Codigo == codigoParaApagar)
+                if (endereco.Codigo == enderecoParaApagar.Codigo)
                 {
                     // Remove o endereco encontrado da lista de enderecos
                     enderecos.Remove(endereco);
@@ -85,6 +85,19 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             }
             // Retornar null pois nao encontrou o endereco com o codigo desejado
             return null;
+        }
+
+        public int ObterUltimoCodigo()
+        {
+            int ultimoCodigo = 0;
+
+            for (int i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+
+                ultimoCodigo = endereco.Codigo;
+            }
+            return ultimoCodigo;
         }
 
         public void SalvarArquivo()
