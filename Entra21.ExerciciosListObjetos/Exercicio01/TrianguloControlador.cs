@@ -188,12 +188,5 @@ Lado1: {triangulo.Lado1}
 Lado2: {triangulo.Lado2}
 Lado3: {triangulo.Lado3}");
         }
-
-
-
-
-
-
-
     }
 }

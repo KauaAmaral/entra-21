@@ -9,6 +9,7 @@
         public double Nota1;
         public double Nota2;
         public double Nota3;
+        public AlunoStatus Status;
 
         public double CalcularMedia()
         {
