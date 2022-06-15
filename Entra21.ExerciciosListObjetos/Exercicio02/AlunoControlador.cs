@@ -30,7 +30,7 @@
                 }
                 else if (codigoMenu == 4)
                 {
-                    //EditarNotas();
+                    EditarNotas();
                 }
                 else if (codigoMenu == 5)
                 {
@@ -194,6 +194,35 @@ Nota 3: {aluno.Nota3}");
             }
         }
 
+        private void EditarNotas()
+        {
+            ApresentarTodosAlunos();
 
+            Console.Write("Matricula do aluno desejado: ");
+            var matriculaAluno = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Novo código da matricula: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nota 1: ");
+            var nota1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Nota 2: ");
+            var nota2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Nota 3: ");
+            var nota3 = Convert.ToDouble(Console.ReadLine());
+
+            var alterou = alunoServico.EditarNotasAlunos(codigoMatricula, nota1, nota2, nota3);
+
+            if (alterou == false)
+            {
+                Console.WriteLine("Matricula não existe.");
+            }
+            else
+            {
+                Console.WriteLine("Produto alterado com sucesso.");
+            }
+        }
     }
 }
