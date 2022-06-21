@@ -49,22 +49,24 @@
             // 
             // buttonEditar
             // 
+            this.buttonEditar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonEditar.Location = new System.Drawing.Point(1002, 308);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(94, 29);
             this.buttonEditar.TabIndex = 0;
             this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.UseVisualStyleBackColor = false;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
+            this.buttonApagar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonApagar.Location = new System.Drawing.Point(1111, 308);
             this.buttonApagar.Name = "buttonApagar";
             this.buttonApagar.Size = new System.Drawing.Size(94, 29);
             this.buttonApagar.TabIndex = 1;
             this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.UseVisualStyleBackColor = false;
             this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // labelNome
@@ -110,18 +112,20 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonSalvar.Location = new System.Drawing.Point(1147, 241);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(152, 29);
             this.buttonSalvar.TabIndex = 9;
             this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // dataGridViewTabelaImc
             // 
             this.dataGridViewTabelaImc.AllowUserToAddRows = false;
             this.dataGridViewTabelaImc.AllowUserToDeleteRows = false;
+            this.dataGridViewTabelaImc.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridViewTabelaImc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTabelaImc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
@@ -198,6 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1320, 756);
             this.Controls.Add(this.textBoxAltura);
             this.Controls.Add(this.labelAltura);
