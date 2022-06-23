@@ -26,7 +26,7 @@
                 }
                 else if (codigoMenu == 3)
                 {
-                    //Apagar();
+                    Apagar();
                 }
                 else if (codigoMenu == 4)
                 {
@@ -38,31 +38,31 @@
                 }
                 else if (codigoMenu == 6)
                 {
-                    //ApresentarNomeTodosAlunos();
+                    ApresentarNomeTodosAlunos();
                 }
                 else if (codigoMenu == 7)
                 {
-                    //ApresentarAprovados();
+                    ApresentarAprovados();
                 }
                 else if (codigoMenu == 8)
                 {
-                    //ApresentarReprovados();
+                    ApresentarReprovados();
                 }
                 else if (codigoMenu == 9)
                 {
-                    //ApresentarEmExame();
+                    ApresentarEmExame();
                 }
                 else if (codigoMenu == 10)
                 {
-                    //ApresentarMediaAluno();
+                    ApresentarMediaAluno();
                 }
                 else if (codigoMenu == 11)
                 {
-                    //ApresentarStatusAlunos();
+                    ApresentarStatusAlunos();
                 }
                 else if (codigoMenu == 12)
                 {
-                    //ApresentarMediaIdades();
+                    ApresentarMediaIdades();
                 }
                 Console.WriteLine(@"
 
@@ -72,29 +72,26 @@ Aperte qualquer tecla para prosseguir.");
         }
         private void ApresentarTodosAlunos()
         {
-            Console.Write("Digite a matricula do aluno desejado: ");
-            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+            var alunos = alunoServico.ObterTodosAlunos();
 
-            var aluno = alunoServico.ObterCodigoMatricula(codigoMatricula);
-
-            if (aluno == null)
+            if (alunos.Count == 0)
             {
-                Console.WriteLine("Aluno não cadastrado.");
+                Console.WriteLine("Nenhum aluno cadastrado.");
 
                 return;
             }
 
-            Console.Clear();
-
-            Console.WriteLine($@"Nome: {aluno.Nome}
-Idade: {aluno.Idade}
-Código da Matricula: {aluno.CodigoMatricula}
-Materia Favorita: {aluno.MateriaFavorita}
-Nota 1: {aluno.Nota1}
-Nota 2: {aluno.Nota2}
-Nota 3: {aluno.Nota3}");
+            for (int i = 0; i < alunos.Count; i++)
+            {
+                Console.WriteLine($@"Nome: {alunos[i].Nome}
+Idade: {alunos[i].Idade}
+Código da Matricula: {alunos[i].CodigoMatricula}
+Materia Favorita: {alunos[i].MateriaFavorita}
+Nota 1: {alunos[i].Nota1}
+Nota 2: {alunos[i].Nota2}
+Nota 3: {alunos[i].Nota3}");
+            }
         }
-
         private int ApresentarSolicitarMenu()
         {
             Console.WriteLine(@"Menu:
@@ -116,7 +113,6 @@ Nota 3: {aluno.Nota3}");
             int codigoMenu = SolicitarCodigoMenu();
             return codigoMenu;
         }
-
         private int SolicitarCodigoMenu()
         {
             var codigoMenu = 0;
@@ -136,11 +132,10 @@ Nota 3: {aluno.Nota3}");
             }
             return codigoMenu;
         }
-
         private void Cadastrar()
         {
             Console.Write("Nome: ");
-            var nome = Console.ReadLine();
+            var nome = Console.ReadLine().Trim().ToLower();
 
             Console.Write("Idade: ");
             var idade = Convert.ToInt32(Console.ReadLine());
@@ -149,7 +144,7 @@ Nota 3: {aluno.Nota3}");
             var codigoMatricula = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Matéria Favorita: ");
-            var materiaFavorita = Console.ReadLine();
+            var materiaFavorita = Console.ReadLine().Trim().ToLower();
 
             Console.Write("Nota 1: ");
             var nota1 = Convert.ToDouble(Console.ReadLine());
@@ -162,7 +157,6 @@ Nota 3: {aluno.Nota3}");
 
             alunoServico.AdicionarAluno(nome, idade, codigoMatricula, materiaFavorita, nota1, nota2, nota3);
         }
-
         private void EditarCadastro()
         {
             ApresentarTodosAlunos();
@@ -171,7 +165,7 @@ Nota 3: {aluno.Nota3}");
             var matriculaAluno = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Nome: ");
-            var nome = Console.ReadLine();
+            var nome = Console.ReadLine().Trim().ToLower();
 
             Console.Write("Idade: ");
             var idade = Convert.ToInt32(Console.ReadLine());
@@ -180,20 +174,20 @@ Nota 3: {aluno.Nota3}");
             var codigoMatricula = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Matéria Favorita: ");
-            var materiaFavorita = Console.ReadLine();
+            var materiaFavorita = Console.ReadLine().Trim().ToLower();
 
             var alterou = alunoServico.EditarDadosCadastrais(nome, idade, codigoMatricula, materiaFavorita);
 
             if (alterou == false)
             {
                 Console.WriteLine("Matricula não existe.");
+                return;
             }
             else
             {
                 Console.WriteLine("Produto alterado com sucesso.");
             }
         }
-
         private void EditarNotas()
         {
             ApresentarTodosAlunos();
@@ -218,11 +212,169 @@ Nota 3: {aluno.Nota3}");
             if (alterou == false)
             {
                 Console.WriteLine("Matricula não existe.");
+                return;
             }
             else
             {
                 Console.WriteLine("Produto alterado com sucesso.");
             }
         }
+        private void Apagar()
+        {
+            ApresentarTodosAlunos();
+
+            Console.Write("Nome do aluno desejado: ");
+            var nome = Console.ReadLine();
+
+            var alunoApagado = alunoServico.RemoverAluno(nome);
+
+            if (alunoApagado == true)
+            {
+                Console.WriteLine("Aluno removido com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Nenhum aluno registrado com esse nome.");
+                return;
+            }
+        }
+        private void ApresentarNomeTodosAlunos()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            var nomeAlunos = alunoServico.ObterNomes();
+
+            if (alunos.Count() == 0)
+            {
+                Console.Write("Nenhum aluno cadastrado.");
+                return;
+            }
+
+            Console.WriteLine(@"Nomes dos alunos:
+");
+
+            for (var i = 0; i < alunos.Count(); i++)
+            {
+                Console.WriteLine(nomeAlunos[i]);
+            }
+        }
+        private void ApresentarAprovados()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            var aprovados = alunoServico.ObterAprovados();
+
+            if (alunos.Count == 0)
+            {
+                Console.Write("Nenhum aluno cadastrado.");
+                return;
+            }
+
+            Console.WriteLine(@"Lista de alunos aprovados:
+");
+
+            for (var i = 0; i < alunos.Count(); i++)
+            {
+                Console.WriteLine(aprovados[i]);
+            }
+        }
+        private void ApresentarReprovados()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            var reprovados = alunoServico.ObterReprovados();
+
+            if (alunos.Count == 0)
+            {
+                Console.Write("Nenhum aluno cadastrado.");
+                return;
+            }
+            else if (reprovados.Count == 0)
+            {
+                Console.Write("Nenhum aluno reprovado.");
+                return;
+            }
+
+            Console.WriteLine(@"Lista de alunos reprovados:
+");
+
+            for (int i = 0; i < alunos.Count(); i++)
+            {
+                Console.WriteLine(reprovados[i]);
+            }
+        }
+        private void ApresentarEmExame()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            var emExame = alunoServico.ObterReprovados();
+
+            if (alunos.Count == 0)
+            {
+                Console.Write("Nenhum aluno cadastrado.");
+                return;
+            }
+            else if (emExame.Count == 0)
+            {
+                Console.Write("Nenhum aluno em exame.");
+                return;
+            }
+
+            Console.WriteLine(@"Lista de alunos em exame:
+");
+
+            for (int i = 0; i < alunos.Count(); i++)
+            {
+                Console.WriteLine(emExame[i]);
+            }
+        }
+        private void ApresentarMediaIdades()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            var mediaIdades = alunoServico.ObterMediaIdades();
+
+            if (alunos.Count == 0)
+            {
+                Console.WriteLine("Nenhum aluno cadastrado.");
+                return;
+            }
+
+            Console.WriteLine(@$"Media de idades: {mediaIdades}");
+        }
+        private void ApresentarMediaAluno()
+        {
+            ApresentarTodosAlunos();
+
+            Console.Write("Matricula do aluno desejado: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            var verificarSeExiste = alunoServico.ObterCodigoMatricula(codigoMatricula);
+
+            var mediaAluno = alunoServico.ObterMediaPorCodigoMatricula(codigoMatricula);
+
+            if (verificarSeExiste == null)
+            {
+                Console.WriteLine("Matricula não existe.");
+                return;
+            }
+
+            Console.WriteLine(@$"Media: {mediaAluno}");
+        }
+        private void ApresentarStatusAlunos()
+        {
+            ApresentarTodosAlunos();
+
+            Console.Write("Matricula do aluno desejado: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            var verificarSeExiste = alunoServico.ObterCodigoMatricula(codigoMatricula);
+
+            var statusAluno = alunoServico.ObterStatusPorCodigoMatricula(codigoMatricula);
+
+            if (verificarSeExiste == null)
+            {
+                Console.WriteLine("Matricula não existe.");
+                return;
+            }
+
+            Console.WriteLine(@$"Status: {statusAluno}");
+        }
     }
 }
+

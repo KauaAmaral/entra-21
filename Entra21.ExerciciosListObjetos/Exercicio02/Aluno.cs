@@ -20,11 +20,13 @@
 
         public AlunoStatus ObterStatus()
         {
-            if (CalcularMedia() > 7)
+            var media = CalcularMedia();
+
+            if (media >= 7)
             {
                 return AlunoStatus.Aprovado;
             }
-            else if (CalcularMedia() >= 5 && CalcularMedia() < 7)
+            else if (media >= 5 && media < 7)
             {
                 return AlunoStatus.EmExame;
             }

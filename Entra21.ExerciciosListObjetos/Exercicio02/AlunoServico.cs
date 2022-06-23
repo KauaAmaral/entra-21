@@ -27,8 +27,8 @@
 
                 if (alunoAtual.Nome == nome)
                 {
-                    return true;
                     alunos.Remove(alunoAtual);
+                    return true;
                 }
             }
             return false;
