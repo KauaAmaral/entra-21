@@ -96,7 +96,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         private void ObterDadosCep()
         {
-            var cep = "89042299";
+            var cep = "89070200";
 
             // HttpClient permite fazer requisicoes para obter ou enviar dados para outros sistemas
             var httpClient = new HttpClient();
@@ -112,7 +112,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
                 var dadosEndereco = JsonConvert.DeserializeObject<EnderecoDadosRequisicao>(resposta);
 
-                textBoxEnderecoCompleto.Text = $"{dadosEndereco.Uf} - {dadosEndereco.Localidade} - {dadosEndereco.Bairro} - {dadosEndereco.logradouro}";
+                textBoxEnderecoCompleto.Text = $"{dadosEndereco.Uf} - {dadosEndereco.Localidade} - {dadosEndereco.Bairro} - {dadosEndereco.Logradouro}";
             }
         }
     }
