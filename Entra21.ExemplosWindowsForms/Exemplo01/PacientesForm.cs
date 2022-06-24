@@ -62,7 +62,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             var imc = CalcularImc(peso, altura);
 
             // Verificar se esta em modo de edição
-            if (indiceLinhaSelecionada == 0)
+            if (indiceLinhaSelecionada == -1)
             {
                 // Adicionar linha no dataGridView de paciente
                 dataGridViewTabelaImc.Rows.Add(new object[]
