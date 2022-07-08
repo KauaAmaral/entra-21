@@ -113,6 +113,11 @@ INSERT INTO pessoas (nome, cpf, rg, data_de_nascimento, idade)
 	'1970-06-18',
 	'48');
 
+-- Desafio do Claudio mostrar a media das idades e a soma
+SELECT SUM(idade) AS 'Soma Idades',
+	AVG(idade) AS 'Media Idades'
+	FROM pessoas;
+
 SELECT id, nome, cpf, rg, data_de_nascimento, idade
 	FROM pessoas;
 
@@ -227,6 +232,50 @@ INSERT INTO enderecos (estado, cidade, bairro, cep, logradouro, numero, compleme
 	'249',
 	'');
 
+UPDATE enderecos
+	SET logradouro = 'Rua Julio Teodoro Martins', complemento = 'Casa'
+	WHERE id = 2;
+
+UPDATE enderecos
+	SET cidade = 'Salvador', complemento = 'Casa'
+	WHERE id = 4;
+
+UPDATE enderecos
+	SET cep = '35.162-484', complemento = 'Casa'
+	WHERE id = 5;
+
+UPDATE enderecos
+	SET logradouro = 'Rua Itu', complemento = 'Apartamento'
+	WHERE id = 6;
+
+UPDATE enderecos
+	SET complemento = 'Apartamento'
+	WHERE id = 8;
+
+UPDATE enderecos
+	SET cidade = 'Rio Branco', cep = '69.900-162'
+	WHERE id = 9;
+
+UPDATE enderecos
+	SET complemento = 'Apartamento'
+	WHERE id = 10;
+
+UPDATE enderecos
+	SET complemento = 'Casa'
+	WHERE id = 11;
+
+-- Desafio Claudio Apresentar o logradouro com maior quantidade de caracteres
+SELECT logradouro AS 'Maior Logradouro'
+	FROM enderecos
+	WHERE LEN(logradouro) = (SELECT MAX(LEN(p.logradouro))
+	FROM enderecos p);
+
+-- Desafio Claudio Apresentar o logradouro com menor quantidade de caracteres
+SELECT logradouro AS 'Menor Logradouro'
+	FROM enderecos
+	WHERE LEN(logradouro) = (SELECT MIN(LEN(p.logradouro))
+	FROM enderecos p);
+
 SELECT id, estado, cidade, bairro, cep, logradouro, numero, complemento
 	FROM enderecos;
 
@@ -322,6 +371,31 @@ INSERT INTO champions (nome, descricao, habilidade_1, habilidade_2, habilidade_3
 	'Sede de Sangue / Preço em Sangue',
 	'Lâminas da Aflição',
 	'Massacre');
+
+UPDATE champions
+	SET habilidade_2 = 'ATAQUE ALPHA', habilidade_3 = 'MEDITAR', habilidade_4 = 'ESTILO WUJU', habilidade_5 = 'HIGHLANDER'
+	WHERE id = 3;
+
+UPDATE champions
+	SET habilidade_5 = 'FÚRIA DO DRAGÃO'
+	WHERE id = 5;
+
+UPDATE champions
+	SET habilidade_2 = 'QUEBRA-COFRES'
+	WHERE id = 6;
+
+UPDATE champions
+	SET descricao = 'FORMA DEMONIACA'
+	WHERE id = 9;
+
+-- Desafio Claudio Concatenar Habilidades
+SELECT id, nome, descricao, CONCAT(habilidade_1, ', ',
+	habilidade_2, ', ',
+	habilidade_3, ', ',
+	habilidade_4, ', ',
+	habilidade_5, ', ') AS 'Habilidades Concatenadas'
+	FROM champions
+	WHERE id = 1;
 
 SELECT id, nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5
 	FROM champions;
