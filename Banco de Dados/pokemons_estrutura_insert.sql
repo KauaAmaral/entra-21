@@ -735,3 +735,5 @@ INSERT INTO pokemons (nome, codigo, categoria, descricao, altura, peso, hp, ataq
 ('Zygarde', '718', 'Order', 'When the Kalos region&#39;s ecosystem falls intodisarray, it appears and reveals its secret power.', 5.0, 305.0, 4, 5, 5, 4, 4, 5),
 ('Diancie', '719', 'Jewel', 'A sudden transformation of Carbink,its pink, glimmering body is said to bethe loveliest sight in the whole world.', 0.7, 8.8, 2, 5, 6, 5, 6, 3),
 ('Hoopa', '720', 'Mischief', 'In its true form, it possesses a huge amount of power. Legends of its avarice tell how it once carried off an entire castle to gain the treasure hidden within.', 0.5, 9.0, 4, 6, 3, 6, 5, 4);
+
+SELECT
