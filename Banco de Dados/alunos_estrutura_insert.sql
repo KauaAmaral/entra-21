@@ -2720,3 +2720,114 @@ VALUES
 ('Ezequiel Mascareñas', '030.871.261-79', 'Gosye', 'Áries', '898', '7.47', '9.69', '2.04', '0.59', 'Negro', '1969-04-04'), 
 ('Délio Carrilho', '805.245.797-17', 'Lalun', 'Touro', '873', '0.11', '5.29', '7.66', '4.42', 'Roxo', '1988-04-30'), 
 ('Justino Betancour', '349.770.422-98', 'Puvofi', 'Touro', '722', '9.57', '4.81', '8.74', '3.26', 'Amarelo-limão', '1968-04-22');
+
+--Tabelas de alunos:
+--Utilize o arquivo alunos_estrutura_insert.sql
+
+--1. Selecione todas as colunas da tabela.
+SELECT id, nome, cpf, nick, signo, numero_favorito, cor_preferida, nota_1, nota_2, nota_3, nota_4, data_nascimento
+	FROM alunos;
+
+--2. Selecione o nome dos alunos que a nota 1 é maior que 9.0.
+SELECT nome
+	FROM alunos
+	WHERE nota_1 > 9;
+
+--3. Selecione o nome do aluno, nota 1, nota 2, nota 3, nota 4, e a média.
+ALTER TABLE alunos ADD media FLOAT;
+
+UPDATE alunos SET media = (nota_1 + nota_2 + nota_3 + nota_4) / 4;
+
+SELECT nome, nota_1, nota_2, nota_3, nota_4, media
+	FROM alunos;
+
+--4. Contabilize a quantidade de alunos com o signo de Peixes
+SELECT COUNT(id) AS 'Quantidade de Alunos com Signo Peixes'
+	FROM alunos
+	WHERE signo = 'Peixes';
+
+--5. Selecione a soma da nota 1
+SELECT SUM(nota_1) AS 'Soma das notas 1'
+	FROM alunos;
+
+--6. Selecione a média da nota 2
+SELECT AVG(nota_2) AS 'Média das notas 2'
+	FROM alunos;
+
+--7. Selecione o nome, menor nota 1.
+SELECT nome
+	FROM alunos
+	WHERE nota_1 = (SELECT MIN(p.nota_1)
+	FROM alunos p);
+
+--8. Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o maior nome.
+SELECT nome, nota_1, nota_2, nota_3, nota_4
+	FROM alunos
+	WHERE LEN(nome) = (SELECT MAX(LEN(p.nome))
+	FROM alunos p);
+
+--9. Selecione a cor e quantidade com a cor Gelo.
+SELECT CONCAT('Gelo - Quantidade: ', COUNT(cor_preferida)) AS 'COR'
+	FROM alunos
+	WHERE cor_preferida = 'Gelo';
+
+--10. Selecione a quantidade de alunos que o nome contém Francisco no começo.
+SELECT COUNT(nome) AS 'Quantidade de Alunos Com Nome Francisco'
+	FROM alunos
+	WHERE nome LIKE 'Francisco%';
+
+--11. Selecione a quantidade de alunos que o nome contém Luc.
+SELECT COUNT(nome) AS 'Quantidade de Alunos que Contém Luc no Nome'
+	FROM alunos
+	Where nome LIKE '%Luc%';
+
+--12. Selecione o nome, signo e data de nascimento quando o signo Áries
+SELECT nome, signo, data_nascimento
+	FROM alunos
+	WHERE signo = 'Áries';
+
+--13. Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o maior média.
+SELECt nome, nota_1, nota_2, nota_3, nota_4
+	FROM alunos
+	WHERE media = (SELECT MAX(p.media)
+	FROM alunos p);
+
+--14. Selecione o nome, média e caso a média for menor que 5 apresentar reprovado, caso for menor que 7
+--apresentar em exame senão apresentar aprovado.
+--Dica: buscar como fazer IF em sql.
+SELECT nome, media,
+	CASE
+		WHEN media < 5 THEN 'Reprovado'
+		WHEN media > 7 THEN 'Aprovado'
+		ELSE 'Em Exame'
+	END 'Status'
+	FROM alunos;
+
+--15. Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o menor média.
+SELECT nome, nota_1, nota_2, nota_3, nota_4
+	FROM alunos
+	WHERE media = (SELECT MIN(p.media)
+	FROM alunos p);
+
+--16. Selecione a quantidade de alunos em que a média foi maior que 7
+SELECT COUNT(id) AS 'Quantidade de Alunos Com Média Maior Que 7'
+	FROM alunos
+	WHERE media > 7;
+
+--17. Selecione o nome, nick do aluno que o nick contém 5 caracteres.
+SELECT nome, nick
+	FROM alunos
+	WHERE LEN(nick) = 5;
+
+--18. Selecione o nome do aluno quando a cor for ouro ou amarelo-torrado e a média for maior que seis e meio
+
+--19. Selecione o nome e o ano da data de nascimento.
+--20. Selecione o nick e o mês de nascimento quando o mês de nascimento for maior que 6.
+--21. Selecione a quantidade de pessoas que nasceram no ano de 1996
+--22. Selecione a quantidade de pessoas de pessoas que nasceram no dia dois do mês de fevereiro do ano 1964
+--ou 1994.
+--23. Selecione o nick e a nota 4 do aluno que a nota 2 está entre 5.0 e 5.99.
+--24. Apresentar a média da aluna Josefina.
+--25. Apresentar nome, nick, nota 1, nota 2, nota 3, nota 4, quando o nome conter Justino e o signo começar com
+--‘A’.
+--26. Apresentar a média das médias.

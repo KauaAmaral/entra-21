@@ -797,6 +797,6 @@ SELECT SUM(ataque) AS 'Soma dos Ataques'
 	FROM pokemons;
 
 --12. Selecione a média dos ataques especiais quando o nome do pokemon começar com ‘P’.
-SELECT SUM(especial_ataque) / COUNT(especial_ataque) AS 'Medias dos Ataques Especiais'
+SELECT AVG(especial_ataque) AS 'Medias dos Ataques Especiais'
 	FROM pokemons
 	WHERE nome LIKE 'P%';
