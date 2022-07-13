@@ -112,3 +112,68 @@ SELECT
 
 UPDATE pedidos SET status = 1 
 	WHERE id = 2;
+
+-- Adicionar as pecas ao pedido
+SELECT * FROM pecas;
+
+INSERT INTO pedidos_pecas (id_pedido, id_peca, quantidade) VALUES
+	(1, 2, 2), -- 2 SSDs M2 para o pedido 1
+	(1, 4, 1), -- 1 GTX 1060 para o pedido 1
+	(1, 6, 1); -- 1 Modulo 16Gb RAM DDR5 para o pedido 1
+
+	-- Alterar o cliente do pedido 1 para o cliente CRY
+UPDATE pedidos SET id_cliente = 2
+	WHERE id = 1;	
+
+-- Consultar apresentando nome cliente, nome peca, quantidade, valor unitario, total das pecas
+SELECT  pd.id AS 'Código Pedido',
+	c.nome AS 'Cliente',
+	p.nome AS 'Peças',
+	pp.quantidade AS 'Quantidade', 
+	CONCAT('R$ ', p.preco_unitario) AS 'Preço Unitário',
+	CONCAT('R$ ', p.preco_unitario * pp.quantidade) AS 'Total da Peças'
+	FROM pedidos_pecas AS pp
+	INNER JOIN pecas AS p ON (pp.id_peca = p.id)
+	INNER JOIN pedidos AS pd ON (pp.id_pedido = pd.id)
+	INNER JOIN clientes AS c ON (pd.id_cliente = c.id);
+
+-- Criar pedido para o Claudio
+INSERT INTO pedidos (id_cliente, data_criacao, status) VALUES
+	(1, GETDATE(), 0);
+
+INSERT INTO pedidos_pecas(id_pedido, id_peca, quantidade) VALUES
+	(3, 2, 2), -- id_pedido = 3, id_peca = 2 (SSD 240Gb M2), quantidade = 2
+	(3, 3, 2), -- id_pedido = 3, id_peca = 3 (RTX 3090 TI), quantidade = 2
+	(3, 5, 4); -- id_pedido = 3, id_peca = 5 (16Gb RAM DDR5), quantidade = 4
+
+-- Apresentar informações do pedido do cliente Claudio
+SELECT 
+	p.id AS 'Código Pedido',
+	p.status AS 'Status Pedido',
+	c.nome AS 'Cliente',
+	CONCAT(
+	e.estado, ' - ',
+	e.cidade, ' - ',
+	e.bairro, ' - ',
+	e.logradouro, ', ',
+	e.numero) AS 'Endereço Completo'
+	FROM pedidos AS p
+	INNER JOIN clientes AS c ON (p.id_cliente = c.id)
+	INNER JOIN enderecos AS e ON (c.id = e.id_cliente)
+	WHERE p.id_cliente = 1;
+
+SELECT 
+	p.id AS 'Código Pedido',
+	p.status AS 'Status Pedido',
+	c.nome AS 'Cliente',
+	pec.nome AS 'Peças'
+	FROM pedidos AS p
+	INNER JOIN clientes AS c ON (p.id_cliente = c.id)
+	INNER JOIN pedidos_pecas AS pp ON (p.id = pp.id_pedido)
+	INNER JOIN pecas AS pec ON (pp.id_peca = pec.id)
+	WHERE p.id_cliente = 1;
+
+-- Efetivar a compra do pedido do Claudio
+UPDATE pedidos SET status = 2, data_efetivacao_compra = '2022-07-12 17:30:00'
+	WHERE id = 3;
+
