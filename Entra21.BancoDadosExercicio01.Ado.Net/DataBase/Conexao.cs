@@ -1,14 +1,14 @@
-﻿namespace Entra21.BancoDadosExercicio01.Ado.Net.DataBase
+﻿using System.Data.SqlClient;
+
+namespace Entra21.BancoDadosExercicio01.Ado.Net.DataBase
 {
     internal class Conexao
     {
-        public SqlConnection Conectar()
+       public SqlConnection Conectar()
         {
             SqlConnection conexao = new SqlConnection();
 
-            var connectionString = @"";
-
-            conexao.ConnectionString = connectionString;
+            var connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kaua_\source\repos\KauaAmaral\entra-21\Entra21.BancoDadosExercicio01.Ado.Net\DataBase\BancoDadosExercicio01.mdf;Integrated Security=True;Connect Timeout=30";
 
             conexao.Open();
 
