@@ -44,9 +44,11 @@ WHERE id = @ID";
 
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = @"UPDATE unidades_federativas
-SET nome = @NOME, sigla = @SIGLA
+            comando.CommandText = @"UPDATE unidades_federativas SET
+nome = @NOME,
+sigla = @SIGLA
 WHERE id = @ID";
+
             comando.Parameters.AddWithValue("@NOME", unidadeFederativa.Nome);
             comando.Parameters.AddWithValue("@SIGLA", unidadeFederativa.Sigla);
             comando.Parameters.AddWithValue("@ID", unidadeFederativa.Id);
@@ -109,7 +111,7 @@ FROM unidades_federativas";
 
                 unidadeFederativa.Id = Convert.ToInt32(linha["id"].ToString());
                 unidadeFederativa.Nome = linha["nome"].ToString();
-                unidadeFederativa.Sigla= linha["sigla"].ToString();
+                unidadeFederativa.Sigla = linha["sigla"].ToString();
 
                 unidadesFederativas.Add(unidadeFederativa);
             }

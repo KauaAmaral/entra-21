@@ -40,8 +40,12 @@ WHERE id = @ID";
 
             var comando = conexao.CreateCommand();
 
-            comando.CommandText = @"UPDATE cidades
-SET id_unidade_federativa = @ID_UNIDADE_FEDERATIVA, nome = @NOME, quantidade_habitantes = @QUANTIDADE_HABITANTES, data_hora_fundacao = @DATA_HORA_FUNDACAO, pib = @PIB
+            comando.CommandText = @"UPDATE cidades SET
+id_unidade_federativa = @ID_UNIDADE_FEDERATIVA,
+nome = @NOME,
+quantidade_habitantes = @QUANTIDADE_HABITANTES,
+data_hora_fundacao = @DATA_HORA_FUNDACAO,
+pib = @PIB
 WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID_UNIDADE_FEDERATIVA", cidade.UnidadeFederativa.Id);
@@ -95,7 +99,47 @@ WHERE id = @ID";
 
         public List<Cidade> ObterTodos()
         {
-            throw new NotImplementedException();
+            var conexao = new Conexao().Conectar();
+
+            var comando = conexao.CreateCommand();
+
+            comando.CommandText = @"SELECT 
+c.id AS 'id',
+c.nome AS 'nome',
+c.quantidade_habitantes AS 'quantidade_habitantes',
+c.data_hora_fundacao AS data_hora_fundacao,
+c.pib AS 'pib'
+uf.id AS 'unidade_federativa_id,
+uf.sigla AS 'unidade_federativa_sigla'
+FROM cidades AS c
+INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
+
+            var tabelaEmMemoria = new DataTable();
+
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            var cidades = new List<Cidade>();
+
+            for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
+            {
+                var registro = tabelaEmMemoria.Rows[i];
+
+                var cidade = new Cidade();
+                
+                cidade.Id = Convert.ToInt32(registro["Id"]);
+                cidade.Nome = registro["nome"].ToString();
+                cidade.QuantidadeHabitantes = Convert.ToInt32(registro["quantidade_habitantes"]);
+                cidade.DataHoraFundacao = Convert.ToDateTime(registro["data_hora_fundacao"]);
+                cidade.Pib = Convert.ToDecimal(registro["pib"]);
+
+                cidade.UnidadeFederativa = new UnidadeFederativa();
+
+                cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["unidade_federativa_id"]);
+                cidade.UnidadeFederativa.Sigla = registro["unidade_federativa_sigla"].ToString();
+
+                cidades.Add(cidade);
+            }
+            return cidades;
         }
     }
 }
