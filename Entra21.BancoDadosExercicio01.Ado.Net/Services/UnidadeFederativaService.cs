@@ -81,7 +81,7 @@ WHERE id = @ID";
 
             unidadeFederativa.Id = Convert.ToInt32(primeiroRegistro["id"]);
             unidadeFederativa.Nome = primeiroRegistro["nome"].ToString();
-            unidadeFederativa.Sigla = primeiroRegistro["sigla"].ToString();
+            unidadeFederativa.Sigla = primeiroRegistro["sigla"].ToString().ToUpper();
 
             conexao.Close();
 
@@ -111,7 +111,7 @@ FROM unidades_federativas";
 
                 unidadeFederativa.Id = Convert.ToInt32(linha["id"].ToString());
                 unidadeFederativa.Nome = linha["nome"].ToString();
-                unidadeFederativa.Sigla = linha["sigla"].ToString();
+                unidadeFederativa.Sigla = linha["sigla"].ToString().ToUpper();
 
                 unidadesFederativas.Add(unidadeFederativa);
             }

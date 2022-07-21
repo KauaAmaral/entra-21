@@ -110,6 +110,7 @@ c.quantidade_habitantes AS 'quantidade_habitantes',
 c.data_hora_fundacao AS data_hora_fundacao,
 c.pib AS 'pib'
 uf.id AS 'unidade_federativa_id,
+uf.nome AS 'unidade_federativa_nome'
 uf.sigla AS 'unidade_federativa_sigla'
 FROM cidades AS c
 INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
@@ -135,6 +136,7 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
                 cidade.UnidadeFederativa = new UnidadeFederativa();
 
                 cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["unidade_federativa_id"]);
+                cidade.UnidadeFederativa.Nome = registro["unidade_federativa_nome"].ToString();
                 cidade.UnidadeFederativa.Sigla = registro["unidade_federativa_sigla"].ToString();
 
                 cidades.Add(cidade);
