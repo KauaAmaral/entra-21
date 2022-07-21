@@ -8,9 +8,11 @@ namespace Entra21.BancoDadosExercicio01.Ado.Net.DataBase
         {
             SqlConnection conexao = new SqlConnection();
 
-            var connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kaua_\source\repos\KauaAmaral\entra-21\Entra21.BancoDadosExercicio01.Ado.Net\DataBase\BancoDadosExercicio01.mdf;Integrated Security=True;Connect Timeout=30";
+            var nomeBanco = "BancoDados";
 
-            conexao.ConnectionString = connectionString;           
+            var caminhoCompleto = Directory.GetCurrentDirectory().Substring(0, AppContext.BaseDirectory.LastIndexOf("\\bin"));
+
+            conexao.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={caminhoCompleto}\Database\{nomeBanco}.mdf;Integrated Security=True";         
             
             conexao.Open();
 
