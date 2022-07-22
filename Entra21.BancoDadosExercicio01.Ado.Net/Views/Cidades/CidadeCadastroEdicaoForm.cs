@@ -16,6 +16,29 @@ namespace Entra21.BancoDadosExercicio01.Ado.Net.Views.Cidades
             _idParaEditar = -1;
         }
 
+        public CidadeCadastroEdicaoForm(Cidade cidade) : this()
+        {
+            _idParaEditar = cidade.Id;
+
+            textBoxNome.Text = cidade.Nome;
+
+            textBoxQuantidadeHabitantes.Text = cidade.QuantidadeHabitantes.ToString();
+
+            dateTimePickerDataHoraFundacao.Value = cidade.DataHoraFundacao;
+
+            textBoxPib.Text = cidade.Pib.ToString();
+
+            for (int i = 0; i < comboBoxUnidadeFederativa.Items.Count; i++)
+            {
+                var unidadeFederativaPercorrida = comboBoxUnidadeFederativa.Items[i] as UnidadeFederativa;
+
+                if (unidadeFederativaPercorrida.Id == cidade.UnidadeFederativa.Id)
+                {
+                    comboBoxUnidadeFederativa.SelectedItem = unidadeFederativaPercorrida;
+                }
+            }
+        }
+
         private void PreencherComboBoxUnidadeFederativa()
         {
             var unidadeFederativaService = new UnidadeFederativaService();
@@ -42,12 +65,11 @@ namespace Entra21.BancoDadosExercicio01.Ado.Net.Views.Cidades
 
             var unidadeFederativa = comboBoxUnidadeFederativa.SelectedItem as UnidadeFederativa;
 
-            var quantidadeHabitantes = textBoxQuantidadeHabitantes.Text.Trim();
+            var quantidadeHabitantes = textBoxQuantidadeHabitantes.Text.Trim().Replace(".", "").Replace(",", "");
 
             var dataHoraFundacao = dateTimePickerDataHoraFundacao.Value;
 
-            // Verificar na proxima aula
-            var pib = maskedTextBoxPib.Text.Trim();
+            var pib = textBoxPib.Text.Trim().Replace(".", "").Replace(",", "");
 
             var cidade = new Cidade();
             cidade.Nome = nome;

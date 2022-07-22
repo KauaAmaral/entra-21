@@ -15,6 +15,8 @@ namespace Entra21.BancoDadosExercicio01.Ado.Net.Services
             comando.CommandText = @"DELETE FROM cidades
 WHERE id = @ID";
 
+            comando.Parameters.AddWithValue("@ID", id);
+
             comando.ExecuteNonQuery();
 
             conexao.Close();
@@ -28,6 +30,12 @@ WHERE id = @ID";
 
             comando.CommandText = @"INSERT INTO cidades (id_unidade_federativa, nome, quantidade_habitantes, data_hora_fundacao, pib) VALUES
 (@ID_UNIDADE_FEDERATIVA, @NOME, @QUANTIDADE_HABITANTES, @DATA_HORA_FUNDACAO, @PIB);";
+
+            comando.Parameters.AddWithValue("@ID_UNIDADE_FEDERATIVA", cidade.UnidadeFederativa.Id);
+            comando.Parameters.AddWithValue("@NOME", cidade.Nome);
+            comando.Parameters.AddWithValue("@QUANTIDADE_HABITANTES", cidade.QuantidadeHabitantes);
+            comando.Parameters.AddWithValue("@DATA_HORA_FUNDACAO", cidade.DataHoraFundacao);
+            comando.Parameters.AddWithValue("@PIB", cidade.Pib);
 
             comando.ExecuteNonQuery();
 
@@ -107,10 +115,10 @@ WHERE id = @ID";
 c.id AS 'id',
 c.nome AS 'nome',
 c.quantidade_habitantes AS 'quantidade_habitantes',
-c.data_hora_fundacao AS data_hora_fundacao,
-c.pib AS 'pib'
-uf.id AS 'unidade_federativa_id,
-uf.nome AS 'unidade_federativa_nome'
+c.data_hora_fundacao AS 'data_hora_fundacao',
+c.pib AS 'pib',
+uf.id AS 'unidade_federativa_id',
+uf.nome AS 'unidade_federativa_nome',
 uf.sigla AS 'unidade_federativa_sigla'
 FROM cidades AS c
 INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";

@@ -38,8 +38,8 @@
             this.textBoxQuantidadeHabitantes = new System.Windows.Forms.TextBox();
             this.labelDataHoraFundacao = new System.Windows.Forms.Label();
             this.labelPib = new System.Windows.Forms.Label();
-            this.maskedTextBoxPib = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePickerDataHoraFundacao = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPib = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonSalvar
@@ -130,29 +130,29 @@
             this.labelPib.TabIndex = 7;
             this.labelPib.Text = "Pib";
             // 
-            // maskedTextBoxPib
-            // 
-            this.maskedTextBoxPib.Location = new System.Drawing.Point(12, 274);
-            this.maskedTextBoxPib.Mask = "R$ ";
-            this.maskedTextBoxPib.Name = "maskedTextBoxPib";
-            this.maskedTextBoxPib.Size = new System.Drawing.Size(408, 23);
-            this.maskedTextBoxPib.TabIndex = 13;
-            // 
             // dateTimePickerDataHoraFundacao
             // 
-            this.dateTimePickerDataHoraFundacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataHoraFundacao.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dateTimePickerDataHoraFundacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDataHoraFundacao.Location = new System.Drawing.Point(12, 221);
             this.dateTimePickerDataHoraFundacao.Name = "dateTimePickerDataHoraFundacao";
             this.dateTimePickerDataHoraFundacao.Size = new System.Drawing.Size(408, 23);
             this.dateTimePickerDataHoraFundacao.TabIndex = 14;
+            // 
+            // textBoxPib
+            // 
+            this.textBoxPib.Location = new System.Drawing.Point(12, 274);
+            this.textBoxPib.Name = "textBoxPib";
+            this.textBoxPib.Size = new System.Drawing.Size(408, 23);
+            this.textBoxPib.TabIndex = 16;
             // 
             // CidadeCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 347);
+            this.Controls.Add(this.textBoxPib);
             this.Controls.Add(this.dateTimePickerDataHoraFundacao);
-            this.Controls.Add(this.maskedTextBoxPib);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.comboBoxUnidadeFederativa);
@@ -164,6 +164,7 @@
             this.Controls.Add(this.labelUnidadeFederativa);
             this.Controls.Add(this.labelNome);
             this.Name = "CidadeCadastroEdicaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CidadeCadastroEdicaoForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,7 +183,7 @@
         private TextBox textBoxQuantidadeHabitantes;
         private Label labelDataHoraFundacao;
         private Label labelPib;
-        private MaskedTextBox maskedTextBoxPib;
         private DateTimePicker dateTimePickerDataHoraFundacao;
+        private TextBox textBoxPib;
     }
 }

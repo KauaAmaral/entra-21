@@ -40,6 +40,7 @@
             this.buttonCidades.TabIndex = 0;
             this.buttonCidades.Text = "Cidades";
             this.buttonCidades.UseVisualStyleBackColor = true;
+            this.buttonCidades.Click += new System.EventHandler(this.buttonCidades_Click);
             // 
             // buttonUnidadeFederativa
             // 
